@@ -132,4 +132,9 @@ footer a:hover{
 
 
 /* ========== Media Queries ========== */
-
+@media (max-width: 600px) {
+    nav a {
+        margin-inline: 10px; /* Reduce el margen */
+        padding: 3px 10px; /* Ajusta el padding */
+    }
+}
