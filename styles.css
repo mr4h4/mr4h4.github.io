@@ -12,6 +12,9 @@ body {
     color: #f4f4f4;
     line-height: 1.6;
 }
+main {
+    text-align: center;
+}
 
 a {
     text-decoration: none;
@@ -79,3 +82,4 @@ h1, h2, h3, h4, h5, h6 {
     object-fit: cover; /* Asegura que la imagen se recorte correctamente */
     border: 2px solid #000; /* Opcional: Agrega un borde */
   }
+
