@@ -16,6 +16,9 @@ main {
     text-align: center;
 }
 
+ul {
+    list-style-type: circle;
+}
 a {
     text-decoration: none;
     color: inherit;
