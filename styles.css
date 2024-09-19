@@ -70,3 +70,12 @@ h1, h2, h3, h4, h5, h6 {
         flex: 100%;
     }
 }
+
+/* ============== Classes ================== */
+.avatar {
+    width: 150px; /* Ajusta el tamaño */
+    height: 150px; /* Ajusta el tamaño */
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover; /* Asegura que la imagen se recorte correctamente */
+    border: 2px solid #000; /* Opcional: Agrega un borde */
+  }
