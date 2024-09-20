@@ -2,7 +2,7 @@
 const body = document.body;
 
 // Establecer los caracteres de lluvia (ceros y unos)
-const rainChars = ['0', '1', 'error'];
+const rainChars = ['0', '1'];
 
 // Establecer el color de lluvia (verde)
 const rainColor = 'green';
