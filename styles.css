@@ -11,6 +11,25 @@
   
   
 /* ========== Global Styles ========== */
+
+/* Establecer el estilo para las gotas de lluvia */
+span {
+    z-index: 1;
+    position: absolute; /* Posicionar las gotas de lluvia de manera absoluta */
+    font-family: monospace; /* Establecer la fuente en monospace para que los ceros y unos tengan el mismo ancho */
+    animation: drop 3s linear infinite; /* Animación para hacer que las gotas de lluvia caigan */
+  }
+  
+  /* Animación para hacer que las gotas de lluvia caigan */
+  @keyframes drop {
+    0% {
+      transform: translateY(0); /* Iniciar la animación en la posición inicial */
+    }
+    100% {
+      transform: translateY(100vh); /* Finalizar la animación en la posición final */
+    }
+  }
+
 * {
     font-family: "abel", sans-serif;
     box-sizing: border-box;
