@@ -123,6 +123,13 @@ main p {
     text-align: justify;
     width: 50vw;
 }
+
+#langtops {
+    display: flex;
+    justify-content: center;
+    width: 200%;
+    height: 200%;
+}
 footer {
     margin-top: auto;
     display: flex;
