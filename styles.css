@@ -112,6 +112,7 @@ main hr {
     width: 60%;
 }
 main h1 {
+    width: 50vw;
     font-size: 32px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -120,7 +121,7 @@ main h1 {
 main p {
     font-size: 22px;
     text-align: justify;
-    width: 50%;
+    width: 50vw;
 }
 footer {
     margin-top: auto;
