@@ -34,7 +34,7 @@ function createRainDrop() {
   // Establecer un temporizador para eliminar la gota de lluvia después de un breve período
   setTimeout(() => {
     body.removeChild(rainDrop);
-  }, 600);
+  }, 700);
 }
 
 // Crear una función para generar gotas de lluvia a intervalos
