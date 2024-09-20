@@ -56,6 +56,7 @@ body {
    
 }
 
+
 header hr{
     margin: 5px;
 }
@@ -107,14 +108,19 @@ main {
     justify-content: flex-start;
 }
 
+main hr {
+    width: 60%;
+}
 main h1 {
+    font-size: 32px;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
 main p {
+    font-size: 22px;
     text-align: justify;
-    width: 75%;
+    width: 50%;
 }
 footer {
     margin-top: auto;
