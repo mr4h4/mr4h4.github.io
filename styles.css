@@ -112,7 +112,7 @@ main hr {
     width: 60%;
 }
 main h1 {
-    width: 75vw;
+    width: 100vw;
     font-size: 32px;
     margin-top: 5px;
     margin-bottom: 15px;
@@ -121,7 +121,7 @@ main h1 {
 main p {
     font-size: 22px;
     text-align: justify;
-    width: 75vw;
+    width: 100vw;
 }
 
 #langtops {
