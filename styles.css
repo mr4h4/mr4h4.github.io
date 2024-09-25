@@ -92,8 +92,25 @@ footer{
     background-color: #000000; /* Fondo ligero */
     border: 2px solid greenyellow; /* Borde para destacar el div */
     border-radius: 20px; /* Bordes redondeados */
-    padding: 10px;
+    padding: 5px;
     margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
+}
+
+#box p{
+    margin-inline: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
+}
+
+#box h1{
+    margin-top: 5px;
+    margin-bottom: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
     z-index: 0;
@@ -118,7 +135,7 @@ footer{
 
 #stats-container img{
     display: flex;
-    width: 50dvw;
+    width: 35dvw;
     margin: 0 auto 20px auto;    
     margin-top: 30px;
 
