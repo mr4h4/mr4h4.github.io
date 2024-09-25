@@ -1,46 +1,51 @@
-// Obtener el elemento body
-const body = document.body;
+// Select the canvas element and set its dimensions
+const canvas = document.createElement('canvas');
+document.body.appendChild(canvas);
+canvas.width = document.body.scrollWidth;
+canvas.height = document.body.scrollHeight;
+canvas.style.position = 'absolute'; // Position the canvas absolutely
+canvas.style.top = '0'; // Align the canvas to the top
+canvas.style.left = '0'; // Align the canvas to the left
+canvas.style.zIndex = '-1'; // Set z-index to place it above other content
+canvas.style.width = document.body.scrollWidth;
+canvas.style.height = document.body.scrollHeight;
+const ctx = canvas.getContext('2d');
 
-// Establecer los caracteres de lluvia (ceros y unos)
-const rainChars = ['0', '1'];
+// Characters to display (0s and 1s)
+const characters = ['0', '1'];
+const fontSize = 20; // Size of the characters
+const columns = canvas.width / fontSize; // Number of columns for characters
+const drops = Array.from({ length: Math.floor(columns) }).fill(1); // Array to track the drops
 
-// Establecer el color de lluvia 
-const rainColor = 'green';
+// Function to draw the falling characters
+function draw() {
+    // Set a black background
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)'; // Create a fading effect
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-// Establecer la velocidad de lluvia (ajusta a tu gusto)
-const rainSpeed = 200; // milisegundos
+    // Set the text color and font
+    ctx.fillStyle = '#00ff00'; // Green color for the characters
+    ctx.font = `${fontSize}px monospace`;
 
-// Crear una función para generar una gota de lluvia
-function createRainDrop() {
-  // Crear un nuevo elemento span para la gota de lluvia
-  const rainDrop = document.createElement('span');
+    // Loop through each column
+    for (let i = 0; i < drops.length; i++) {
+        const text = characters[Math.floor(Math.random() * characters.length)]; // Randomly select a character
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize); // Draw the character at the specified position
 
-  // Establecer el contenido de texto de la gota de lluvia a un cero o uno aleatorio
-  rainDrop.textContent = rainChars[Math.floor(Math.random() * rainChars.length)];
+        // Reset drop position after reaching the bottom
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0; // Randomly reset the drop position
+        }
 
-  // Establecer el color de la gota de lluvia a verde
-  rainDrop.style.color = rainColor;
-
-  // Establecer el tamaño de fuente de la gota de lluvia a un valor aleatorio entre 10 y 20 píxeles
-  rainDrop.style.fontSize = `${Math.floor(Math.random() * 11) + 10}px`;
-
-  // Establecer la posición de la gota de lluvia a una coordenada x aleatoria y una coordenada y de 0
-  rainDrop.style.top = '0px';
-  rainDrop.style.left = `${Math.floor(Math.random() * window.innerWidth)}px`;
-
-  // Agregar la gota de lluvia al elemento body
-  body.appendChild(rainDrop);
-
-  // Establecer un temporizador para eliminar la gota de lluvia después de un breve período
-  setTimeout(() => {
-    body.removeChild(rainDrop);
-  }, 700);
+        drops[i]++; // Move the drop down
+    }
 }
 
-// Crear una función para generar gotas de lluvia a intervalos
-function generateRain() {
-  setInterval(createRainDrop, 25);
-}
+// Start the animation
+setInterval(draw, 50); // Call the draw function every 50 milliseconds
 
-// Llamar a la función generateRain para iniciar el efecto de lluvia
-generateRain();
+// Resize the canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
