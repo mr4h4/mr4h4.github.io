@@ -14,6 +14,7 @@ function setCanvasSize() {
     canvas.style.zIndex = '-1'; // Ensure the canvas stays behind the content
 
        // Set the initial background color to black
+       ctx.globalAlpha = 0.9;
        ctx.fillStyle = 'black'; // Set fill style to black
        ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the canvas with black
 }
