@@ -118,7 +118,7 @@ footer{
 
 #stats-container img{
     display: flex;
-    width: 30dvw;
+    width: 50dvw;
     margin: 0 auto 20px auto;    
     margin-top: 30px;
 
@@ -167,17 +167,10 @@ footer h3{
 
 
 /* ========== Media Queries ========== */
-@media (max-width: 600px) {
-    #stats-container img{
-        display: flex;
-        width: 60dvw;
-        margin: 0 auto 20px auto;    
-        margin-top: 30px;
+@media (max-width: 768px) {
+    #stats-container img {
+        width: 70dvw; /* Aumenta el tamaño en dispositivos móviles */
+        margin-top: 20px;
+        margin-bottom: 10px;
     }
-
-    body {
-        width: 100dvw;
-        overflow-x: hidden;
-      }
-      
 }
