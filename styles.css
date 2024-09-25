@@ -127,4 +127,17 @@ footer h3{
 
 
 /* ========== Media Queries ========== */
+@media (max-width: 600px) {
+    #stats-container img{
+        display: flex;
+        width: 60dvw;
+        margin: 0 auto 20px auto;    
+        margin-top: 30px;
+    }
 
+    body {
+        width: 100dvw;
+        overflow-x: hidden;
+      }
+      
+}
