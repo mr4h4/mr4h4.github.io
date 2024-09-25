@@ -54,16 +54,12 @@ footer img{
     background-color: #000000; /* Fondo ligero */
     border: 2px solid greenyellow; /* Borde para destacar el div */
     border-radius: 20px; /* Bordes redondeados */
-    padding: 20px;
+    padding: 10px;
     margin: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: justify; /* Centrar el texto */
+    text-align: center; /* Centrar el texto */
     z-index: 0;
    
-}
-
-#box h1{
-    text-align: center; /* Centrar el texto */
 }
 
 #box2{
@@ -83,7 +79,7 @@ footer img{
 
 #stats-container img{
     display: flex;
-    width: 40dvw;
+    width: 30dvw;
     margin: 0 auto 20px auto;    
     margin-top: 30px;
 
