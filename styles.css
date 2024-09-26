@@ -26,6 +26,7 @@ header img:hover {
     transform: scale(1.1);
 }
 
+
 nav {
     position: fixed;           /* Fija el nav en la parte superior */
     top: 0;
@@ -101,16 +102,17 @@ footer{
 }
 
 #box p{
-    margin-inline: 10px;
+    margin-inline: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
     z-index: 0;
    
 }
 
+
 #box h1{
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
     z-index: 0;
@@ -118,20 +120,36 @@ footer{
 }
 
 #box2{
-    background-color: #000000;
+    background-color: #000000; /* Fondo ligero */
     border: 2px solid greenyellow; /* Borde para destacar el div */
     border-radius: 20px; /* Bordes redondeados */
+    padding: 5px;
+    margin: 20px auto; /* Centra horizontalmente el div */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
-    margin-inline: 25%;
     z-index: 0;
-
+    display: inline-block; /* Permite que el ancho se ajuste al contenido */
+    max-width: 100%; /* Ancho máximo para asegurar que no exceda el contenedor */
+   
 }
 
-#box2 *{
-  margin-top: 5px;
-  margin-bottom: 5px;
+#box2 p{
+    margin-inline: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
 }
 
+
+#box2 h1{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
+}
 
 #stats-container img{
     display: flex;
