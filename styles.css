@@ -102,7 +102,7 @@ footer{
 }
 
 #box p{
-    margin-inline: 50px;
+    margin-inline: 40px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
     z-index: 0;
@@ -112,7 +112,7 @@ footer{
 
 #box h1{
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
     text-align: center; /* Centrar el texto */
     z-index: 0;
