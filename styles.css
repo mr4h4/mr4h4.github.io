@@ -117,22 +117,6 @@ footer{
    
 }
 
-#box2{
-    background-color: #000000;
-    border: 2px solid greenyellow; /* Borde para destacar el div */
-    border-radius: 20px; /* Bordes redondeados */
-    text-align: center; /* Centrar el texto */
-    margin-inline: 25%;
-    z-index: 0;
-
-}
-
-#box2 *{
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-
 #stats-container img{
     display: flex;
     width: 35dvw;
