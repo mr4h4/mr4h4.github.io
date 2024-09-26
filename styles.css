@@ -26,17 +26,6 @@ header img:hover {
     transform: scale(1.1);
 }
 
-header #box{
-    background-color: #000000; /* Fondo ligero */
-    border: 2px solid greenyellow; /* Borde para destacar el div */
-    border-radius: 20px; /* Bordes redondeados */
-    padding: 5px;
-    margin: 50vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: center; /* Centrar el texto */
-    z-index: 0;
-}
-
 nav {
     position: fixed;           /* Fija el nav en la parte superior */
     top: 0;
