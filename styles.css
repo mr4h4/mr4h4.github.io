@@ -101,22 +101,20 @@ footer{
    
 }
 
-#box p{
-    margin-inline: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: center; /* Centrar el texto */
-    z-index: 0;
-   
+#desplegable{
+    transition: all 0.5s ease-in-out;
+    width: 100%;
+    border-color: greenyellow;
+    border-radius: 15px;
+    background-color: transparent; /* Fondo ligero */
 }
 
-
-#box h1{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: center; /* Centrar el texto */
-    z-index: 0;
-   
+#desplegable:hover{
+    transition: all 1s ease-in-out;
+    background-color: rgb(0, 0, 0); /* Fondo ligero */  
+    h2{
+        color: white;
+    }
 }
 
 #box2{
@@ -130,9 +128,40 @@ footer{
     z-index: 0;
     display: inline-block; /* Permite que el ancho se ajuste al contenido */
     max-width: 100%; /* Ancho máximo para asegurar que no exceda el contenedor */
+}
+
+#stats-container img{
+    display: flex;
+    width: 35dvw;
+    margin: 0 auto 20px auto;    
+    margin-top: 30px;
+
+}
+/* ========== Grid System ========== */
+
+
+/* ========== Typography ========== */
+h2{
+    color: greenyellow;
+    font-family: "Roboto Mono", monospace;
+}
+#box h1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
    
 }
 
+#box h1{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
+}
 #box2 p{
     margin-inline: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
@@ -150,18 +179,14 @@ footer{
     z-index: 0;
    
 }
-
-#stats-container img{
-    display: flex;
-    width: 35dvw;
-    margin: 0 auto 20px auto;    
-    margin-top: 30px;
-
+#box p{
+    margin-inline: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
+    text-align: center; /* Centrar el texto */
+    z-index: 0;
+   
 }
-/* ========== Grid System ========== */
 
-
-/* ========== Typography ========== */
 body h1{
     font-family: "Roboto Condensed", sans-serif;
     color: white;
