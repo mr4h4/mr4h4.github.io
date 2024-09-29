@@ -31,7 +31,34 @@
 <hr color="(173,255,0)">
 <!--     MAIN     -->
 <main>
+    <div id="box">
+    <h1>Blog Section</h1>
+    <p>This section is my personal space to share <strong>guides, explanations, news, and articles about technology, as well as other projects</strong> that you won't find on my GitHub profile.</p>
+    <br>
+    <p><strong>Each dropdown in this section opens a different article;</strong> feel free to explore all of them.</p>
+    <p>This section is not a public forum (the only writer on this blog is mr4h4), but if you have any ideas for improving this section, you can <a href="mailto:adrianheredev@gmail.com" target="_blank">mail</a> to me.</p>
+    <br>
+    <p>However, the documentation presented in these articles will be reviewed and updated periodically.</p>
+    <br>
+    <p><strong>I hope you find it useful.</strong></p>
+    </div>
 
+    <div id="box">
+        <i style="color: white;">The blogs are displayed in vertical order (from newest to oldest).</i>
+    </div>
+
+  <!-- BLOG2 -->
+  <div id="box">
+    <button id="desplegable" data-target="content2" onclick="toggleContent(this)">
+        <h2>How to create a "auto-alias" function on a bash script</h2>
+    </button>
+    <div id="content2" style="display: none;">
+        <hr color="(173,255,0)">
+        <p>I'm going to show you how to create an auto-alias for your Bash scripts; <strong>this will be very useful if you work with Linux distributions.</strong></p>
+
+        </div>
+    </div>
+    
    <!-- BLOG1 -->
 <div id="box">
     <button id="desplegable" data-target="content1" onclick="toggleContent(this)">
@@ -41,71 +68,60 @@
         <hr color="(173,255,0)">
         <p>Is it really possible to get a WiFi/Bluetooth hacking tool on such a low budget? <br>
         <strong>In fact, it actually is!</strong></p>
-        <p><strong>All you need is to get an ESP32 module </strong>and install the <a href="https://github.com/justcallmekoko/ESP32Marauder">"ESP32-Marauder" firmware from JustCallMeKoko.</a> <br> (a how-to guide will be provided later)</p>
+        <p><strong>All you need is to get an ESP32 module </strong>and install the <a href="https://github.com/justcallmekoko/ESP32Marauder" target="_blank">"ESP32-Marauder" firmware from JustCallMeKoko.</a> <br> (a how-to guide will be provided later)</p>
         <p>Currently, the fastest, most affordable, and effective way to get a module that includes everything we need for this project is to grab an <strong>ESP32-2432S028 development board</strong> (better known as the <strong>"Cheap Yellow Display"</strong>). It’s commonly available on Amazon, AliExpress, and other platforms with prices around 3€ and 10€ (may vary).</p>
         <div id="box">
             <strong>This board comes with a built-in touchscreen, a Micro-SD card slot, and both Micro-USB and USB Type-C power ports.</strong>
         </div>
-        <img src="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2024/03/ESP32-Cheap-Yellow-Display-CYD-Board-ESP32-2432S028R-back-labeled.jpg?resize=828%2C420&quality=100&strip=all&ssl=1">
-        <p>Image from: <a href="https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/">randomnerdtutorials.com</a></p>
-        
+
+        <div id="box">
+        <img style="width: 100%; height: 100%; border-radius: 15px;" src="https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2024/03/ESP32-Cheap-Yellow-Display-CYD-Board-ESP32-2432S028R-back-labeled.jpg?resize=828%2C420&quality=100&strip=all&ssl=1">
+        <p>Image from: <a href="https://randomnerdtutorials.com/cheap-yellow-display-esp32-2432s028r/" target="_blank">randomnerdtutorials.com</a></p>
+        </div>
+
         <hr color="(173,255,0)">
         <h2>HOW TO INSTALL THE FIRMWARE</h2>
         
         <ul>
         <b style="color: greenyellow; text-align: center;">There are two diferent ways:</b>
-                <li><p style="text-align: left;">Fr4nkFletcher WebFlasher: <a style="color: greenyellow;">Click to see</a></p></li>
-                <li><p style="text-align: left;">JustCallMeKoko repository (manual installation): <a style="color: greenyellow;">Click to see</a></p></li>
+                <li><p style="text-align: left;">Fr4nkFletcher WebFlasher: <a style="color: greenyellow;" href="#webflasheresp32">Click to see</a></p></li>
+                <li><p style="text-align: left;">JustCallMeKoko repository (manual installation): <a style="color: greenyellow;" href="#manualesp32">Click to see</a></p></li>
         </ul>
         <hr color="(173,255,0)">
         <h2><strong>What is the ESP32-Marauder firmware by JustCallMeKoko?</strong></h2>
-<p>
-    The ESP32-Marauder firmware, developed by JustCallMeKoko, is a tool specifically designed to fully leverage the capabilities of the ESP32 module in the field of security and hacking. This firmware allows users to perform a variety of attacks and penetration tests on WiFi and Bluetooth networks, transforming the ESP32 into a multifunctional device for network analysis. With features such as network scanning, data interception, and connection manipulation, it has become a popular choice among cybersecurity enthusiasts and ethical hacking professionals.
-</p>
+        <p>
+            The ESP32-Marauder firmware, developed by JustCallMeKoko, is a tool specifically designed to fully leverage the capabilities of the ESP32 module in the field of security and hacking. This firmware allows users to perform a variety of attacks and penetration tests on WiFi and Bluetooth networks, transforming the ESP32 into a multifunctional device for network analysis. With features such as network scanning, data interception, and connection manipulation, it has become a popular choice among cybersecurity enthusiasts and ethical hacking professionals.
+        </p>
 
-<h2><strong>Advantages of Using the Web Flasher by Fr4nkFletcher</strong></h2>
-<p>
-    One of the main advantages of installing the ESP32 Marauder firmware is the ease provided by the web flasher created by Fr4nkFletcher. This flasher offers an intuitive and accessible interface that allows users to quickly and effortlessly load the firmware onto their ESP32 module. With its streamlined design, even those with limited technical experience can carry out the installation without complicated procedures. Furthermore, the web flasher eliminates the need to set up development tools, further facilitating access to this powerful hacking tool. In summary, the ESP32 Marauder, combined with Fr4nkFletcher's flasher, makes the installation and configuration process accessible to everyone.
-</p>
+        <h2><strong>Advantages of Using the Web Flasher by Fr4nkFletcher</strong></h2>
+        <p>
+            One of the main advantages of installing the ESP32 Marauder firmware is the ease provided by the web flasher created by Fr4nkFletcher. This flasher offers an intuitive and accessible interface that allows users to quickly and effortlessly load the firmware onto their ESP32 module. With its streamlined design, even those with limited technical experience can carry out the installation without complicated procedures. Furthermore, the web flasher eliminates the need to set up development tools, further facilitating access to this powerful hacking tool. In summary, the ESP32 Marauder, combined with Fr4nkFletcher's flasher, makes the installation and configuration process accessible to everyone.
+        </p>
 
+        <h2><strong>Is it open source?</strong></h2>
+        <p>Yes, this project is open source. You can download <a href="https://github.com/justcallmekoko/ESP32Marauder" target="_blank">"ESP32-Marauder" firmware from JustCallMeKoko.</a> and load it as a project in the Arduino IDE to configure your own version of the firmware</p>
+        <p>On the other hand, if you choose to use the web flasher, it will upload the latest available version of the firmware to your device without allowing you the opportunity to modify the code.</p>
+        <hr color="(173,255,0)">
+        <h2 id="webflasheresp32">Web Flasher</h2>
+        <hr color="(173,255,0)">
+        <h2 id="manualesp32">Manual installation</h2>
+
+        </div>
     </div>
-</div>
 
 
    <!-- BLOG2 -->
    <div id="box">
-    <button id="desplegable" data-target="content2" onclick="toggleContent(this)">
-        <h2>Coming Soon</h2>
+    <button id="desplegable" data-target="content0" onclick="toggleContent(this)">
+        <h2>Coming Soon...</h2>
     </button>
-    <div id="content2" style="display: none;">
+    <div id="content0" style="display: none;">
         <hr color="(173,255,0)">
-      
+        <p>Coming soon...</p>
     </div>
 </div>
 
-   <!-- BLOG3 -->
-   <div id="box">
-    <button id="desplegable" data-target="content3" onclick="toggleContent(this)">
-        <h2>Coming Soon</h2>
-    </button>
-    <div id="content3" style="display: none;">
-        <hr color="(173,255,0)">
-      
-    </div>
-</div>
-
-   <!-- BLOG4 -->
-   <div id="box">
-    <button id="desplegable" data-target="content4" onclick="toggleContent(this)">
-        <h2>Coming Soon</h2>
-    </button>
-    <div id="content4" style="display: none;">
-        <hr color="(173,255,0)">
-      
-    </div>
-</div>
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </main>
 
 
