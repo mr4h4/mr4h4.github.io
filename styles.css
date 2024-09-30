@@ -186,7 +186,7 @@ h2{
 #box p{
     margin-inline: 10dvw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: justify; /* Centrar el texto */
+    text-align: center; /* Centrar el texto */
     z-index: 0;
    
 }
