@@ -141,6 +141,10 @@ footer{
 
 
 /* ========== Typography ========== */
+small{
+    color: white;
+}
+
 h2{
     color: greenyellow;
     font-family: "Roboto Mono", monospace;
@@ -180,9 +184,9 @@ h2{
    
 }
 #box p{
-    margin-inline: 40px;
+    margin-inline: 10dvw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para un efecto de elevación */
-    text-align: center; /* Centrar el texto */
+    text-align: justify; /* Centrar el texto */
     z-index: 0;
    
 }
@@ -196,7 +200,7 @@ body h1{
 body p, a{
     font-family: "Roboto Mono", monospace;
     color: white;
-    font-size: 10pt;
+    font-size: 12pt;
 }
 
 footer h3{
