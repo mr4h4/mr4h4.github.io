@@ -26,7 +26,7 @@ setCanvasSize();
 window.addEventListener('resize', setCanvasSize);
 
 // Characters to display (0s and 1s)
-const characters = ['0', '1', 'error', '*', '/', '10', '01', ' 0', ' 1', '0 ', '1 ', 'O', 'null. ', '001', '110', '010', '101', '011', '100', '{', '}', '$', '#',];
+const characters = ['0', '1', 'error', '*', '/', '10', '01', ' 0', ' 1', '0 ', '1 ', 'O', 'null', '001', '110', '010', '101', '011', '100', '{', '}', '$', '#',];
 const fontSize = 20; // Size of the characters
 let columns = canvas.width / fontSize; // Number of columns for characters
 let drops = Array.from({ length: Math.floor(columns) }).fill(1); // Array to track the drops
