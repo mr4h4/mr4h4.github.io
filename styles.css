@@ -2,6 +2,9 @@
 
 
 /* ========== Global Styles ========== */
+body hr{
+    border-color: #ff0000;
+}
 body {
     width: 100vw;               /* Cambiado '100dvw' por '100vw', la unidad 'dvw' es experimental y puede causar problemas */
     overflow-x: hidden;
@@ -17,12 +20,12 @@ header {
 
 header img {
     transition: all 0.5s ease-in-out;
-    border: solid 5px greenyellow;
+    border: solid 5px rgb(255, 0, 0);
     border-radius: 150px;
 }
 
 header img:hover {
-    filter: drop-shadow(-5px 5px 15px greenyellow);
+    filter: drop-shadow(-5px 5px 15px rgb(255, 0, 0));
     transform: scale(1.1);
 }
 
@@ -42,7 +45,7 @@ nav {
 
 nav a {
     text-decoration: none;     /* Elimina el subrayado de los enlaces */
-    color: #acff2f;            /* Color de los enlaces */
+    color: #ff0000;            /* Color de los enlaces */
     font-size: 18px;           /* Tamaño de la fuente de los enlaces */
     margin: 0 10px;            /* Espaciado horizontal entre los enlaces */
     display: inline-block;
@@ -61,7 +64,7 @@ main{
 
 
 main strong{
-    color: greenyellow;
+    color: rgb(255, 0, 0);
 }
 
 footer{
@@ -78,20 +81,20 @@ footer{
     margin-top: 10px;
     margin-bottom: 20px;
     border-radius: 150px;
-    border: solid 5px greenyellow;
+    border: solid 5px rgb(255, 0, 0);
     width: 46px;
     height: 46px;
 
 }
 
 #contactme img:hover{
-    filter: drop-shadow(-5px 5px 15px greenyellow);
+    filter: drop-shadow(-5px 5px 15px rgb(255, 0, 0));
     transform: scale(1.3)
 }
 /* ========== Container ========== */
 #box{
     background-color: #000000; /* Fondo ligero */
-    border: 2px solid greenyellow; /* Borde para destacar el div */
+    border: 2px solid rgb(255, 0, 0); /* Borde para destacar el div */
     border-radius: 20px; /* Bordes redondeados */
     padding: 5px;
     margin: 20px;
@@ -104,22 +107,26 @@ footer{
 #desplegable{
     transition: all 0.5s ease-in-out;
     width: 100%;
-    border-color: greenyellow;
+    border-color: transparent;
     border-radius: 15px;
     background-color: transparent; /* Fondo ligero */
 }
 
 #desplegable:hover{
-    transition: all 1s ease-in-out;
+    transition: all 1.5s ease;
+    font-size: 15pt;
+    filter: drop-shadow(-5px 5px 15px rgb(255, 0, 0));
+    border-color:#ff0000;
+    border-radius: 15px;
     background-color: rgb(0, 0, 0); /* Fondo ligero */  
     h2{
-        color: white;
+        color: rgb(255, 0, 0);
     }
 }
 
 #box2{
     background-color: #000000; /* Fondo ligero */
-    border: 2px solid greenyellow; /* Borde para destacar el div */
+    border: 2px solid rgb(255, 0, 0); /* Borde para destacar el div */
     border-radius: 20px; /* Bordes redondeados */
     padding: 5px;
     margin: 20px auto; /* Centra horizontalmente el div */
@@ -146,7 +153,7 @@ small{
 }
 
 h2{
-    color: greenyellow;
+    color: rgb(255, 255, 255);
     font-family: "Roboto Mono", monospace;
 }
 #box h1{
@@ -206,7 +213,7 @@ body p, a{
 footer h3{
     text-align: center;
     font-family: "Roboto Mono", monospace;
-    color: #adff2f;
+    color: #ff0000;
     font-weight: 500;
 }
 
@@ -240,7 +247,7 @@ footer h3{
 
     nav a {
         text-decoration: none;     /* Elimina el subrayado de los enlaces */
-        color: #acff2f;            /* Color de los enlaces */
+        color: #ff0000;            /* Color de los enlaces */
         font-size: 12px;           /* Tamaño de la fuente de los enlaces */
         margin: 0 10px;            /* Espaciado horizontal entre los enlaces */
         display: inline-block;
@@ -252,7 +259,7 @@ footer h3{
         margin-top: 10px;
         margin-bottom: 20px;
         border-radius: 150px;
-        border: solid 5px greenyellow;
+        border: solid 5px rgb(255, 0, 0);
         width: 32px;
         height: 32px;
     }
