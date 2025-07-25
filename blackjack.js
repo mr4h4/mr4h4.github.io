@@ -18,6 +18,26 @@ const dealButton = document.getElementById("deal");
 const hitButton = document.getElementById("hit");
 const standButton = document.getElementById("stand");
 
+// Pre-cargar todos los sonidos necesarios
+const sounds = {
+    blackjack: new Audio('assets/audio/blackjack.wav'),
+    card: new Audio('assets/audio/card.mp3'),
+    draw: new Audio('assets/audio/draw.wav'),
+    lose: new Audio('assets/audio/lose.wav'),
+    mix: new Audio('assets/audio/mix.mp3'),
+    select: new Audio('assets/audio/select.mp3'),
+    win: new Audio('assets/audio/win.wav')
+};
+
+// Desbloqueo inicial de audio en iOS
+const AudioContext = window.AudioContext || window.webkitAudioContext;
+const context = new AudioContext();
+document.body.addEventListener('click', () => {
+    context.resume().then(() => {
+        console.log("AudioContext unlocked for iOS Safari.");
+    });
+}, { once: true });
+
 betRange.addEventListener("input", function () {
     bet = parseInt(betRange.value);
     betDisplay.textContent = bet;
@@ -37,30 +57,12 @@ function updateBalance() {
 }
 updateBalance();
 
-// Precargar todos los sonidos necesarios
-function preloadSounds() {
-    const sounds = [
-        'assets/audio/card.mp3',
-        'assets/audio/select.mp3',
-        'assets/audio/mix.mp3',
-        'assets/audio/error.mp3',
-        'assets/audio/victoria.mp3',
-        'assets/audio/derrota.mp3'
-    ];
-
-    // Crear los objetos de Audio para cada sonido y cargarlos (sin reproducirlo)
-    sounds.forEach(src => {
-        const audio = new Audio(src);
-        audio.load(); // Cargar el sonido sin reproducirlo
-    });
-}
-
 async function endGame(result) {
     playing = false;
     canHit = false;
 
-    const userScore = handValue(userHand);  // Calcular una sola vez
-    const dealerScore = handValue(dealerHand);  // Calcular una sola vez
+    const userScore = handValue(userHand);
+    const dealerScore = handValue(dealerHand);
 
     updateDealButton();
     updateHitButton();
@@ -69,10 +71,8 @@ async function endGame(result) {
     const resultMessage = document.getElementById("resultMessage");
     let message = "";
 
-    // Pre-cargar el sonido
-    const sound = new Audio(`/assets/audio/${result}.wav`);
     try {
-        await sound.play(); // Reproducir sonido
+        await sounds[result].play(); // Reproducir sonido
     } catch (e) {
         console.warn("No se pudo reproducir el sonido:", e);
     }
@@ -106,7 +106,7 @@ async function endGame(result) {
     canDeal = balance >= bet;
     updateDealButton();
 
-    playerBusted = false; // Resetear busto del jugador
+    playerBusted = false;
 }
 
 function updateDealButton() {
@@ -183,7 +183,7 @@ function createDeck() {
         if (!exists) deck.push(newCard);
     }
 
-    new Audio('assets/audio/mix.mp3').play();
+    sounds.mix.play();
 
     setTimeout(() => {
         resultMessage.textContent = "";
@@ -197,8 +197,8 @@ function createDeck() {
 dealButton.addEventListener("click", function () {
     if (!playing && canDeal && balance >= 1) {
         // Precargar los sonidos cuando el usuario hace clic en DEAL
-        preloadSounds();
-        
+        sounds.select.play();
+
         deck = [];
         userHand = [];
         dealerHand = [];
@@ -215,8 +215,6 @@ dealButton.addEventListener("click", function () {
         updateHitButton();
         updateStandButton();
         betRange.disabled = true;
-
-        new Audio('assets/audio/select.mp3').play();
 
         round++;
         document.getElementById("roundCounter").textContent = round;
