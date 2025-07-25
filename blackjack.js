@@ -37,6 +37,24 @@ function updateBalance() {
 }
 updateBalance();
 
+// Precargar todos los sonidos necesarios
+function preloadSounds() {
+    const sounds = [
+        'assets/audio/card.mp3',
+        'assets/audio/select.mp3',
+        'assets/audio/mix.mp3',
+        'assets/audio/error.mp3',
+        'assets/audio/victoria.mp3',
+        'assets/audio/derrota.mp3'
+    ];
+
+    // Crear los objetos de Audio para cada sonido y cargarlos (sin reproducirlo)
+    sounds.forEach(src => {
+        const audio = new Audio(src);
+        audio.load(); // Cargar el sonido sin reproducirlo
+    });
+}
+
 async function endGame(result) {
     playing = false;
     canHit = false;
@@ -178,6 +196,9 @@ function createDeck() {
 
 dealButton.addEventListener("click", function () {
     if (!playing && canDeal && balance >= 1) {
+        // Precargar los sonidos cuando el usuario hace clic en DEAL
+        preloadSounds();
+        
         deck = [];
         userHand = [];
         dealerHand = [];
