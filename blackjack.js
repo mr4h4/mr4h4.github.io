@@ -9,7 +9,7 @@ let userHand = [];
 let dealerHand = [];
 let playerBusted = false;
 
-let balance = 1000;
+let balance = 5000;
 let betRange = document.getElementById("bet");
 let betDisplay = document.getElementById("betDisplay");
 let bet = parseInt(betRange.value);
