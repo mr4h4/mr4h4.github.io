@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #ff005c;
+    margin-bottom: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+@media(min-width: 768px) {
+    .stats-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+footer a {
+    color: #ff005c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sidebar {
+    height: 100vh; /* Altura completa */
+    width: 0px; /* Ancho del menú lateral */
+    position: fixed; /* Fijo a la izquierda */
+    top: 0;
+    left: 0;
+    background-color: #0d1117;
+    overflow-x: hidden; /* No permitir desplazamiento horizontal */
+    padding-top: 60px; /* Espaciado superior */
+    box-shadow: 2px 0px 5px rgb(0, 0, 0); /* Sombra a la derecha */
+}
+
+.sidebar a {
+    padding: 25px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ff005c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+/* Estilo para el botón de abrir */
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #0d1117;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2; /* Asegura que el botón esté encima del contenido */
+}
+
+.openbtn:hover {
+    color: #ff005c;
+}
+
+/* Estilo para el contenido principal */
+#main-content {
+    margin-left: 20px;
+    padding: 20px;
+}
+
+/* Cuando el menú está abierto, ajusta el contenido */
+.sidebar.open {
+    width: 150px; /* Ancho del menú lateral cuando se abre */
+}
+
+/* Mueve el contenido cuando el menú se abre */
+#main-content.open {
+    margin-left: 250px;
+}
