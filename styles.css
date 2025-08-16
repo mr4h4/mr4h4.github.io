@@ -43,12 +43,22 @@ h3 {
     margin-bottom: 20px;
 }
 
-.stats-container {
+#stats-container {
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    flex-direction: column; /* apilar verticalmente */
+    align-items: center;    /* centrar horizontalmente */
+    gap: 20px;              /* espacio entre imágenes */
 }
+
+#stats-container img {
+    max-width: 400px;       /* ancho máximo proporcional */
+    height: auto;           /* mantener proporción */
+    border-radius: 10px;
+    border: 2px solid white; /* borde blanco de 2px sólido */
+    display: block;
+}
+
+
 
 @media(min-width: 768px) {
     .stats-container {
@@ -131,6 +141,7 @@ footer a:hover {
 /* Cuando el menú está abierto, ajusta el contenido */
 .sidebar.open {
     width: 150px; /* Ancho del menú lateral cuando se abre */
+    z-index: 2;
 }
 
 /* Mueve el contenido cuando el menú se abre */

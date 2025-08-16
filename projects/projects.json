@@ -1,0 +1,26 @@
+{
+    "Proyect1": {
+        "Tittle": "Blackjack.js",
+        "Body": "Disfruta del clásico juego de cartas Blackjack directamente en tu navegador. Una experiencia completamente desarrollada con HTML, CSS y JavaScript, perfecta para jugar desde cualquier dispositivo sin complicaciones.",
+        "Img": "blackjack.png",
+        "Link": "https://mr4h4.github.io/blackjack/blackjack.html"
+    },
+    "Proyect2": {
+        "Tittle": "GuessTheNumber",
+        "Body": "Prueba tu ingenio con Guess the Number, un juego para adivinar números del 1 al 10,000 directamente en tu navegador. Creado con HTML, CSS y JavaScript, ofrece diversión rápida y sencilla en cualquier dispositivo.",
+        "Img": "placeholder.jpg",
+        "Link": ""
+    },
+    "Proyect3": {
+        "Tittle": "isc-dhcp setup",
+        "Body": "isc-dhcp-setup es un script que permite instalar y configurar rápidamente un servidor ISC-DHCP en sistemas basados en Debian/Ubuntu. Facilita definir la interfaz de red, el rango de IPs, puerta de enlace, DNS y tiempos de concesión, dejando valores por defecto si se desea. Ideal para desplegar un servidor DHCP funcional de manera rápida y sencilla desde la terminal.",
+        "Img": "dhcp.png",
+        "Link": "https://github.com/mr4h4/isc-dhcp-setup"
+    },
+    "Proyect4": {
+        "Tittle": "yt-mp3 downloader",
+        "Body": "Una herramienta sencilla que permite descargar canciones de forma automatizada y sin anuncios. Ofrece una versión en Python que requiere ffmpeg instalado y una versión .exe que no necesita instalación adicional.",
+        "Img": "ytmp3.png",
+        "Link": "https://github.com/mr4h4/yt-mp3-downloader"
+    }
+}
