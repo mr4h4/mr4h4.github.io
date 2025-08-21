@@ -41,7 +41,6 @@
 
 .workTitle {
   font-size: 1.8rem;
-  letter-spacing: 2px;
   color: var(--color-ligth-purple);
   text-shadow: 1px 1px 2px black;
 }

@@ -1,0 +1,163 @@
+/* guess.css */
+
+/* Reset y fuente */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+/* Caja de récord fija arriba a la izquierda */
+#record-container {
+    position: absolute;
+    text-align: left;
+    top: 15px;
+    left: 15px;
+    background: #ffcc66;
+    color: #222;
+    padding: 2px 15px;
+    line-height: 2px;
+    border-radius: 12px;
+    font-weight: bold;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    margin-bottom: 20px;
+}
+
+/* Título */
+
+#label {
+    padding: 15px, 15px;
+    margin: 50px;
+}
+h1 {
+    margin-top: 80px;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+}
+
+/* Subtítulo (parrafito explicativo) */
+h1 + p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Input + botón */
+#user-input {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+#user-number {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    width: 160px;
+    text-align: center;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease;
+}
+
+#user-number:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+#submit-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #ffcc66;
+    color: #222;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+#submit-button:hover {
+    background: #ffd580;
+    transform: scale(1.05);
+}
+
+/* Hints y attempts */
+#messages {
+    font-size: 1.1rem;
+    line-height: 8px;
+    font-weight: bold;
+}
+
+/* --- Media Queries para responsive --- */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 50px;
+    }
+    h1 + p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+    #user-number {
+        width: 120px;
+        font-size: 0.9rem;
+    }
+    #submit-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    #record-container {
+        padding: 3px 10px;
+        font-size: 0.9rem;
+    }
+    #messages {
+        font-size: 1rem;
+    }
+}
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    h1 + p {
+        font-size: 1.1rem;
+    }
+    #user-number {
+        width: 140px;
+    }
+    #submit-button {
+        padding: 9px 18px;
+        font-size: 0.95rem;
+    }
+}
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h1 + p {
+        font-size: 1.3rem;
+    }
+    #user-number {
+        width: 180px;
+    }
+    #submit-button {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}

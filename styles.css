@@ -51,8 +51,8 @@ h3 {
 }
 
 #stats-container img {
-    max-width: 400px;       /* ancho máximo proporcional */
-    height: auto;           /* mantener proporción */
+    width:  400px;
+    height: 200px;           /* mantener proporción */
     border-radius: 10px;
     border: 2px solid white; /* borde blanco de 2px sólido */
     display: block;
@@ -64,6 +64,10 @@ h3 {
     .stats-container {
         flex-direction: row;
         justify-content: center;
+    }
+
+    .stats-container img {
+        max-width: 350px;
     }
 }
 
