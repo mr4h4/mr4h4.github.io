@@ -7,7 +7,7 @@
     },
     "Proyect2": {
         "Tittle": "GuessTheNumber",
-        "Body": "Prueba tu ingenio con Guess the Number, un juego para adivinar números del 1 al 10,000 directamente en tu navegador. Creado con HTML, CSS y JavaScript, ofrece diversión rápida y sencilla en cualquier dispositivo.",
+        "Body": "Prueba tu ingenio con Guess the Number adivinando un número del 1 al 10000. Creado con HTML, CSS y JavaScript, guarda las victorias y records en el local-storage de tu navegador.",
         "Img": "guess.png",
         "Link": "https://mr4h4.github.io/guessthenumber/guess.html"
     },
