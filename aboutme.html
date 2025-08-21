@@ -9,18 +9,20 @@
 </head>
 <body>
 
+  <header>
     <!-- Menú lateral de navegación -->
     <div id="sidebar-container"></div>
-    
+    <canvas id="matrix"></canvas>
+
     <!-- Botón para abrir el menú -->
     <span class="openbtn" onclick="openNav()">☰</span>
 
     <!-- Contenido HTML -->
 
-    <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/180666313?v=4">
-    <h1>Sobre mí</h1>
-
+    <img id="profile-img" src="https://avatars.githubusercontent.com/u/180666313?v=4">
+</header>
     <hr>
+    <h1>Sobre mí</h1>
     
 <div id="aboutme">
     <h3>¡Hola! <span style="color: #ff005c;">mr4h4</span> al habla.</h3>
@@ -40,4 +42,5 @@
 
 </body>
     <script src="sidebar.js"></script>
+    <script src="/matrix.js"></script>
 </html>

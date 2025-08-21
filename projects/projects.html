@@ -10,19 +10,20 @@
 </head>
 <body>
 
+   <header>
     <!-- Menú lateral de navegación -->
     <div id="sidebar-container"></div>
-    
+    <canvas id="matrix"></canvas>
+
     <!-- Botón para abrir el menú -->
     <span class="openbtn" onclick="openNav()">☰</span>
 
     <!-- Contenido HTML -->
 
-    <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/180666313?v=4">
-    <h1>Proyectos</h1>
-
+    <img id="profile-img" src="https://avatars.githubusercontent.com/u/180666313?v=4">
+</header>
     <hr>
-
+    <h1>Proyectos</h1>
     <br>
     <p>
     En esta sección encontrarás una recopilación de mis proyectos, cada uno acompañado de una breve descripción, su propósito y las tecnologías utilizadas. 
@@ -34,4 +35,5 @@
 </body>
     <script src="/sidebar.js"></script>
     <script src="/projects/projects.js"></script>
+    <script src="/matrix.js"></script>
 </html>
