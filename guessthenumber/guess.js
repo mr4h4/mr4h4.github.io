@@ -14,17 +14,17 @@ function loadGameData() {
 function checkLocalStorage() {
 // Comprobar si hay datos guardados en caché   
     if (record === null) {
-        console.log("No hay récord guardado todavía.");
+        //console.log("No hay récord guardado todavía.");
     } else {
         loadGameData()
-        console.log("Récord actual:", record);
+        //console.log("Récord actual:", record);
     }
 
     if (wins === null) {
-        console.log("No hay victorias guardadas todavía.");
+        //console.log("No hay victorias guardadas todavía.");
     } else {
         loadGameData()
-        console.log("Victorias actuales:", wins);
+        //console.log("Victorias actuales:", wins);
     }
 }
 
@@ -52,7 +52,7 @@ function getRandomInt(min, max) { //Generar número aleatorio
 
 checkLocalStorage();
 getRandomInt(1, 10001);
-console.log(secretNum);
+//console.log(secretNum);
 
 const submitbutton = document.getElementById("submit-button");
 let userinput = document.getElementById("user-number");
@@ -81,13 +81,13 @@ function checkNumbers(input, secretNum) {
     } else if (input < secretNum) {
         hints.innerHTML = `Try higher than ${input}`;
         attempts -= 1;
-        console.log(attempts)
+        //console.log(attempts)
         attempt_display.innerHTML = `${attempts}`
     };
     
     if (attempts == 0) {
         hints.innerHTML = `You Lose, better luck next time`;
-        console.log("YOU LOSE")
+        //console.log("YOU LOSE")
         newGame();
     };
 };
