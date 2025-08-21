@@ -62,7 +62,7 @@ let attempts = 10
 
 function newGame() {
     attempts = 10;
-    getRandomInt(1, 100001);
+    getRandomInt(1, 10001);
     attempt_display.innerHTML = `${attempts}`;
 };
 
@@ -86,7 +86,7 @@ function checkNumbers(input, secretNum) {
     };
     
     if (attempts == 0) {
-        hints.innerHTML = `You Lose, better luck next time`;
+        hints.innerHTML = `You Lose, the number was ${secretNum}. Better luck next time`;
         //console.log("YOU LOSE")
         newGame();
     };
