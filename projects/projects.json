@@ -1,13 +1,13 @@
 {
     "Proyect1": {
         "Tittle": "Blackjack.js",
-        "Body": "Disfruta del clásico juego de cartas Blackjack directamente en tu navegador. Una experiencia completamente desarrollada con HTML, CSS y JavaScript, perfecta para jugar desde cualquier dispositivo sin complicaciones.",
+        "Body": "Disfruta del clásico Blackjack directamente en tu navegador. Una experiencia completamente desarrollada con HTML, CSS y JavaScript, perfecta para jugar desde cualquier dispositivo sin complicaciones.",
         "Img": "blackjack.png",
         "Link": "https://mr4h4.github.io/blackjack/blackjack.html"
     },
     "Proyect2": {
         "Tittle": "GuessTheNumber",
-        "Body": "Prueba tu ingenio con Guess the Number adivinando un número del 1 al 10000. Creado con HTML, CSS y JavaScript, guarda las victorias y records en el local-storage de tu navegador.",
+        "Body": "Prueba tu ingenio adivinando un número del 1 al 10000. Creado con HTML, CSS y JavaScript, guarda las victorias y records en el local-storage de tu navegador.",
         "Img": "guess.png",
         "Link": "https://mr4h4.github.io/guessthenumber/guess.html"
     },
