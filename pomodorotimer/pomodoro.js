@@ -121,7 +121,7 @@ button.addEventListener('click', () => {
     } else {
         button.classList.remove('stop');
         button.classList.add('start');
-        button.textContent = 'START';
+        button.textContent = 'CONTINUE';
         stopWorkerTimer();
         // detener temporizador
     }
