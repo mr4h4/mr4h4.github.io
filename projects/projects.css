@@ -76,6 +76,7 @@
   text-align: center;
   cursor: var(--cursor-link);
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

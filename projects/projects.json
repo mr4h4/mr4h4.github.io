@@ -11,6 +11,12 @@
         "Img": "guess.png",
         "Link": "https://mr4h4.github.io/guessthenumber/guess.html"
     },
+    "Proyect5": {
+        "Tittle": "Pomodoro Web",
+        "Body": "Pomodoro en versión web con tiempos de trabajo y descansos totalmente configurables, incluye sonido de alarma y utiliza Web Workers para ejecutarse en segundo plano. Permite concentrarte sin necesidad de mirar la ventana o pestaña, disfrutando de máxima flexibilidad y control sobre tus sesiones de productividad.",
+        "Img": "pomodoro.png",
+        "Link": "https://mr4h4.github.io/pomodorotimer/pomodoro.html"
+    },
     "Proyect3": {
         "Tittle": "isc-dhcp setup",
         "Body": "isc-dhcp-setup es un script que permite instalar y configurar rápidamente un servidor ISC-DHCP en sistemas basados en Debian/Ubuntu. Facilita definir la interfaz de red, el rango de IPs, puerta de enlace, DNS y tiempos de concesión, dejando valores por defecto si se desea. Ideal para desplegar un servidor DHCP funcional de manera rápida y sencilla.",

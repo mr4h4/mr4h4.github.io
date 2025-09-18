@@ -1,0 +1,112 @@
+body {
+    background-color: #494d54;
+    font-family: "Averia Libre", system-ui;
+      display: flex;
+    flex-direction: column; /* elementos uno debajo de otro */
+    justify-content: center; /* centra verticalmente */
+    align-items: center; /* centra horizontalmente */
+    min-height: 100vh; /* que ocupe toda la pantalla */
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-size: 200px;
+}
+
+h2 {
+    color: white;
+}
+
+button {
+    border: none;
+    border-radius: 1rem; /* Más redondeado para estilo cute */
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem; /* Más grande para resaltar */
+    font-weight: 700;
+    padding: 1rem 2rem; /* Más cómodo para tocar */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover */
+button:hover {
+    transform: scale(1.05); /* Pequeño “pop” al pasar el cursor */
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+/* Efecto activo/click */
+button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.2);
+}
+
+/* Opcional: estilo start/stop dinámico */
+button.start {
+    background: linear-gradient(135deg, #61d1a8, #059767); /* verde */
+}
+
+button.stop {
+    background: linear-gradient(135deg, #F87171, #EF4444); /* rojo */
+    box-shadow: 0 4px 12px rgba(185, 16, 16, 0.3); /* Sombra suave */
+}
+
+.config-panel {
+    margin: 20px;
+    background-color: #3a3f47; /* darker tone than the body */
+    padding: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.config-panel h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.config-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.config-item label {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.config-item input {
+    width: 80px;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0.75rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #2a2f36; /* slightly darker than the panel */
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.config-item input:focus {
+    background-color: #4b5563;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.5); /* green accent, consistent with button style */
+}
+
+/* Para móviles y tablets */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 100px;
+  }
+}
