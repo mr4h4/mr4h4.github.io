@@ -1,31 +1,31 @@
 {
     "Proyect1": {
         "Tittle": "Blackjack.js",
-        "Body": "Disfruta del clásico Blackjack directamente en tu navegador. Una experiencia completamente desarrollada con HTML, CSS y JavaScript, perfecta para jugar desde cualquier dispositivo sin complicaciones.",
+        "Body": "Enjoy classic Blackjack right in your browser. A fully developed experience using HTML, CSS, and JavaScript, perfect for playing seamlessly on any device.",
         "Img": "blackjack.png",
         "Link": "https://mr4h4.github.io/blackjack/blackjack.html"
     },
     "Proyect2": {
         "Tittle": "GuessTheNumber",
-        "Body": "Prueba tu ingenio adivinando un número del 1 al 10000. Creado con HTML, CSS y JavaScript, guarda las victorias y records en el local-storage de tu navegador.",
+        "Body": "Test your wits by guessing a number between 1 and 10,000. Built with HTML, CSS, and JavaScript, it saves your wins and records in your browser's local storage.",
         "Img": "guess.png",
         "Link": "https://mr4h4.github.io/guessthenumber/guess.html"
     },
     "Proyect5": {
         "Tittle": "Pomodoro Web",
-        "Body": "Pomodoro en versión web con tiempos de trabajo y descansos totalmente configurables, incluye sonido de alarma y utiliza Web Workers para ejecutarse en segundo plano. Permite concentrarte sin necesidad de mirar la ventana o pestaña, disfrutando de máxima flexibilidad y control sobre tus sesiones de productividad.",
+        "Body": "Pomodoro Timer in a web version with fully customizable work and break intervals. It includes an alarm sound and uses Web Workers to run in the background. It lets you stay focused without needing to watch the window or tab, offering maximum flexibility and control over your productivity sessions.",
         "Img": "pomodoro.png",
-        "Link": "https://mr4h4.github.io/pomodorotimer/pomodoro.html"
+        "Link": "https://mr4h4.github.io/pomodorotimer/pomodoro.html" 
     },
     "Proyect3": {
         "Tittle": "isc-dhcp setup",
-        "Body": "isc-dhcp-setup es un script que permite instalar y configurar rápidamente un servidor ISC-DHCP en sistemas basados en Debian/Ubuntu. Facilita definir la interfaz de red, el rango de IPs, puerta de enlace, DNS y tiempos de concesión, dejando valores por defecto si se desea. Ideal para desplegar un servidor DHCP funcional de manera rápida y sencilla.",
+        "Body": "isc-dhcp-setup is a script that allows you to quickly install and configure an ISC-DHCP server on Debian/Ubuntu-based systems. It simplifies defining the network interface, IP range, gateway, DNS, and lease times, with default values available if desired. Ideal for deploying a functional DHCP server quickly and easily.",
         "Img": "dhcp.webp",
         "Link": "https://github.com/mr4h4/isc-dhcp-setup"
     },
     "Proyect4": {
-        "Tittle": "yt-mp3 downloader",
-        "Body": "Una herramienta sencilla que permite descargar canciones de forma automatizada y sin anuncios. Ofrece una versión en Python que requiere ffmpeg instalado y una versión .exe que no necesita instalación adicional.",
+        "Tittle": "yt-downloader",
+        "Body": "A simple tool that allows you to download YouTube videos and songs automatically and without ads. It offers a Python version that requires ffmpeg installed, and an .exe version that needs no additional installation.",
         "Img": "ytmp3.png",
         "Link": "https://github.com/mr4h4/yt-mp3-downloader"
     }

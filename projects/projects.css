@@ -31,6 +31,7 @@
 
 .workTitle,
 .workDescription {
+  cursor: url(/cursor/ColourPointRed6\(text\).cur), text;
   width: 100%; /* mismo ancho para ambos */
   background-color: #0d1117;
   border-radius: 12px;
@@ -67,6 +68,7 @@
 }
 
 .wLinks {
+  cursor: url(/../cursor/ColourPointRed15\(link\).cur), pointer;
   position: absolute;
   bottom: 0;         /* pegado al fondo */
   left: 50%;         /* centrado horizontal */
@@ -76,7 +78,6 @@
   text-align: center;
   cursor: var(--cursor-link);
   transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 
 @media (max-width: 768px) {

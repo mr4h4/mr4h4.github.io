@@ -24,6 +24,8 @@ header {
 }
 
 body {
+    cursor: url(cursor/ColourPointRed1\(normal\).cur), default;
+    
     font-family: Arial, sans-serif;
     background-color: #0d1117;
     color: #ffffff;
@@ -47,6 +49,7 @@ img {
 }
 
 h1 {
+    cursor: url(/cursor/ColourPointRed6\(text\).cur), text;
     color: #ff005c;
     margin: 10px;
     font-size: 2em;
@@ -54,6 +57,7 @@ h1 {
 }
 
 p {
+    cursor: url(/cursor/ColourPointRed6\(text\).cur), text;
     line-height: 1.6;
     max-width: 800px;
     margin-left: auto;
@@ -61,7 +65,13 @@ p {
     padding: 10px;
 }
 
+a {
+    cursor: url(cursor/ColourPointRed15\(link\).cur), pointer;
+}
 
+a:hover {
+    cursor: url(cursor/ColourPointRed15\(link\).cur), pointer;
+}
 
 #stats-container {
     margin: 10px;
@@ -155,6 +165,7 @@ footer a:hover {
 }
 
 .openbtn:hover {
+    cursor: url(cursor/ColourPointRed15\(link\).cur), pointer;
     color: #ff005c;
 }
 

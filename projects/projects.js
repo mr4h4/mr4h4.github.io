@@ -41,6 +41,7 @@ class Project {
         // Create and append link
         let Link = document.createElement('a');
         Link.classList.add('wLinks');
+        Link.target = "_blank"; // This is the line you need to add
         Link.href = this.link;
 
         //LINK ICON
