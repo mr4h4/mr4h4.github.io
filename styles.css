@@ -56,6 +56,9 @@ h1 {
     font-weight: bold;
 }
 
+h3 {
+    cursor: url(/cursor/ColourPointRed6\(text\).cur), text;
+}
 p {
     cursor: url(/cursor/ColourPointRed6\(text\).cur), text;
     line-height: 1.6;
