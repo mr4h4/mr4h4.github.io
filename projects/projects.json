@@ -17,6 +17,12 @@
         "Img": "pomodoro.png",
         "Link": "https://mr4h4.github.io/pomodorotimer/pomodoro.html" 
     },
+    "Proyect6": {
+    "Tittle": "BTC Idle",
+    "Body": "A simple idle game where your clicks are tied to the real-time value of Bitcoin using Binance API. Built with HTML, CSS, and JavaScript, it offers an engaging experience that combines gameplay with real-world cryptocurrency dynamics.",
+    "Img": "btc-idle.png",
+    "Link": "https://mr4h4.github.io/btc-idle/index.html" 
+    },
     "Proyect3": {
         "Tittle": "isc-dhcp setup",
         "Body": "isc-dhcp-setup is a script that allows you to quickly install and configure an ISC-DHCP server on Debian/Ubuntu-based systems. It simplifies defining the network interface, IP range, gateway, DNS, and lease times, with default values available if desired. Ideal for deploying a functional DHCP server quickly and easily.",
