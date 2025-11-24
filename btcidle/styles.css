@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --header-height: 80px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;      /* ancho completo del viewport */
+    height: 100vh;     /* altura completa del viewport */
+    overflow: hidden;  /* evita scroll */
+    background: black;
+    position: relative; /* referencia para elementos absolute dentro */
+}
+
+#scoreboard {
+    z-index: 50;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* ligeramente más oscuro */
+    color: #ff7300ff;
+    padding: 20px 0; /* padding arriba y abajo */
+    border-top: 2px solid #ff7300ff;
+    border-bottom: 2px solid #ff7300ff;
+    font-family: 'Doto', Courier, monospace;
+    text-shadow: 1px 1px 0 #000000, 2px 2px 0 #222; /* efecto retro / arcade */
+}
+#scoreboard p {
+    color: white;
+    margin: 0; /* elimina el espacio entre h1 y p */
+} 
+#scoreboard h1 {
+    font-size: 3em;
+    margin: 0; /* elimina el espacio entre h1 y p */
+}
+
+#bitcoin-container {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    font-size: 16px;
+    color: #ff9a00; /* texto por defecto */
+    background-color: #000000;
+    border: 2px solid #ff7300ff;
+    border-radius: 10px;
+    padding: 15px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#bitcoin-container h3 {
+    font-family: 'Doto', Courier, monospace;
+    margin: 0;
+}
+
+/* Precio subiendo */
+#bitcoin-container.up {
+    color: #00ff66; /* verde neón brillante */
+    border-color: #00ff66;
+    text-shadow: 0 0 5px #00ff66, 0 0 10px #00ff66;
+}
+
+/* Precio bajando */
+#bitcoin-container.down {
+    color: #ff2200; /* rojo intenso y brillante */
+    border-color: #ff2200;
+    text-shadow: 0 0 5px #ff2200, 0 0 10px #ff2200;
+}
+
+/* Precio estable */
+#bitcoin-container.stable {
+    color: #ffffff; /* blanco puro */
+    border-color: #ffffff;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
+}
+
+#dollar-score.up {
+    color: #00ff66; /* verde neón brillante */
+}
+
+#dollar-score.down {
+    color: #ff2200; /* rojo intenso y brillante */
+}
+
+#dollar-score.stable {
+    color: #ffffff; /* blanco puro */
+}
+
+.btc-float {
+    z-index: 10;
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: #00ff66; /* verde neón por defecto */
+    pointer-events: none; /* para que no interfiera con el click */
+    opacity: 1;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 100;
+}
+
+.btc-sell {
+    position: absolute;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 16px;
+    color: #ff2200; /* rojo neón por defecto */
+    pointer-events: none; /* para que no interfiera con el click */
+    opacity: 1;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 100;
+}
+
+#upgrades {
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;         /* evita overflow en móviles */
+    justify-content: center; /* centra los botones */
+    gap: 12px;               /* espacio uniforme entre botones */
+    max-width: 900px;        /* opcional: limitar ancho */
+}
+
+.upgrade-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;                /* espacio entre texto y contador */
+
+    /* Tamaño */
+    padding: 10px 18px;
+
+    /* Estilo similar al bitcoin-container */
+    background-color: #000000;
+    border: 2px solid #ff7300;
+    border-radius: 10px;
+
+    /* Tipografía retro */
+    font-family: 'Doto', Courier, monospace;
+    color: #ff9a00;
+    font-size: 16px;
+    font-weight: bold;
+
+    /* Efecto & animación */
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.upgrade-button:disabled {
+    background-color: #222222;   /* más apagado que el negro normal */
+    border-color: #555555;       /* bordes grises */
+    color: #777777;              /* texto gris apagado */
+    cursor: not-allowed;         /* indica que no se puede clickar */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3); /* sombra más sutil */
+    transform: scale(1);         /* sin efecto de hover */
+    opacity: 0.6;                /* opcional, para dar sensación de desactivado */
+}
+
+/* Hover */
+.upgrade-button:hover {
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    border-color: #ffa640;
+}
+
+/* Click */
+.upgrade-button:active {
+    transform: translateY(1px) scale(0.97);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Etiqueta del contador dentro del botón */
+.upgrade-button p {
+    padding: 2px 10px;      /* más aire interno */
+    background: rgba(255, 154, 0, 0.15);
+    border: 1px solid #ff7300;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #ffb347;
+}
