@@ -2,7 +2,8 @@ const dollarValue = document.querySelector('#dollar-score .value');
 const bitcoinValue = document.querySelector('#bitcoin-score .value');
 
 // Valores del jugador
-let totalBtc = 0;
+window.totalBtc = 0;
+window.totalClicks = 0;
 
 // Posición actual del mouse
 const main = document.querySelector('main');
@@ -14,6 +15,31 @@ main.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
+
+window.playSound = function(url) {
+    const audio = new Audio(url);
+    audio.play();
+}
+
+window.normalizer = function(value, decimals = 2) {
+    const units = [
+        { limit: 1e27, suffix: "Sp" }, // Septillón
+        { limit: 1e24, suffix: "Sx" }, // Sextillón
+        { limit: 1e21, suffix: "Qi" }, // Quintillón
+        { limit: 1e18, suffix: "Qa" }, // Cuatrillón
+        { limit: 1e12, suffix: "T"  }, // Trillón
+        { limit: 1e9,  suffix: "B"  }, // Billón
+        { limit: 1e6,  suffix: "M"  }  // Millón
+    ];
+
+    for (const u of units) {
+        if (value >= u.limit) {
+            return (value / u.limit).toFixed(decimals) + u.suffix;
+        }
+    }
+
+    return value.toFixed(decimals);
+}
 
 // ---------------------------
 // Animaciones BTC
@@ -81,37 +107,9 @@ function updateBtcEquivalent() {
 
     const currentUsdWorth = totalBtc * window.currentBtcPrice;
 
-    dollarValue.textContent = currentUsdWorth >= 1_000_000_000_000_000_000_000_000_000
-        ? `${(currentUsdWorth / 1_000_000_000_000_000_000_000_000_000).toFixed(2)}Sp`
-        : currentUsdWorth >= 1_000_000_000_000_000_000_000_000
-            ? `${(currentUsdWorth / 1_000_000_000_000_000_000_000_000).toFixed(2)}Sx`
-            : currentUsdWorth >= 1_000_000_000_000_000_000_000
-                ? `${(currentUsdWorth / 1_000_000_000_000_000_000_000).toFixed(2)}Qi`
-                : currentUsdWorth >= 1_000_000_000_000_000_000
-                    ? `${(currentUsdWorth / 1_000_000_000_000_000_000).toFixed(2)}Qa`
-                    : currentUsdWorth >= 1_000_000_000_000
-                        ? `${(currentUsdWorth / 1_000_000_000_000).toFixed(2)}T`
-                        : currentUsdWorth >= 1_000_000_000
-                            ? `${(currentUsdWorth / 1_000_000_000).toFixed(2)}B`
-                            : currentUsdWorth >= 1_000_000
-                                ? `${(currentUsdWorth / 1_000_000).toFixed(2)}M`
-                                : currentUsdWorth.toFixed(2);
+    dollarValue.textContent = normalizer(currentUsdWorth, 2);
 
-bitcoinValue.textContent = totalBtc >= 1_000_000_000_000_000_000_000_000_000
-    ? `${(totalBtc / 1_000_000_000_000_000_000_000_000_000).toFixed(7)}Sp`
-    : totalBtc >= 1_000_000_000_000_000_000_000_000
-        ? `${(totalBtc / 1_000_000_000_000_000_000_000_000).toFixed(7)}Sx`
-        : totalBtc >= 1_000_000_000_000_000_000_000
-            ? `${(totalBtc / 1_000_000_000_000_000_000_000).toFixed(7)}Qi`
-            : totalBtc >= 1_000_000_000_000_000_000
-                ? `${(totalBtc / 1_000_000_000_000_000_000).toFixed(7)}Qa`
-                : totalBtc >= 1_000_000_000_000
-                    ? `${(totalBtc / 1_000_000_000_000).toFixed(7)}T`
-                    : totalBtc >= 1_000_000_000
-                        ? `${(totalBtc / 1_000_000_000).toFixed(7)}B`
-                        : totalBtc >= 1_000_000
-                            ? `${(totalBtc / 1_000_000).toFixed(7)}M`
-                            : totalBtc.toFixed(7);
+    bitcoinValue.textContent = normalizer(totalBtc, 7);
 }
 
 window.updateBtcEquivalent = updateBtcEquivalent;
@@ -119,11 +117,30 @@ window.updateBtcEquivalent = updateBtcEquivalent;
 // ---------------------------
 // Incrementar BTC por click
 // ---------------------------
-window.incrementScore = function(x, y) {
+window.incrementScore = function(x, y) { // un click en (x, y)
     if (!window.currentBtcPrice) return;
+
+    //Crypto Bro Logro
+    if (totalClicks > 1 && document.getElementById('cryptoBro').classList.contains('not-achieved')) {
+       unlockAchievement('cryptoBro');
+    }
+
+    //Hash Slayer Logro
+    if (totalBtc >= 1){
+    unlockAchievement('hashslayer')
+    }
+
+    //Millionaire Logro
+    if (totalBtc * window.currentBtcPrice >= 1000000) {
+        unlockAchievement('millionaire');
+    }
 
     const gainedBtc = window.usdPerClick / window.currentBtcPrice;
     totalBtc += gainedBtc;
+
+    totalClicks++;
+    
+    document.getElementById('click-score').querySelector('#value').textContent = totalClicks;
 
     updateBtcEquivalent();
     buyBtc(x, y, `+${gainedBtc.toFixed(7)} BTC`);

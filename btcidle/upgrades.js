@@ -17,9 +17,10 @@ document.getElementById('click-upgrade').addEventListener('click', (e) => {
         window.sellBtc(e.clientX, e.clientY, `- $${clickPrice.toFixed(2)}`);
         window.updateBtcEquivalent();
 
+        playSound('./audio/shop.mp3')
         clickLevel++;
-        clickPrice *= 2.5;
-        window.usdPerClick *= 1.5;
+        clickPrice *= 2.25;
+        window.usdPerClick *= 2.25;
 
         saveUpgradeLevel();
         updateUpgradeDisplay();
@@ -33,8 +34,24 @@ document.getElementById('auto-upgrade').addEventListener('click', (e) => {
         window.sellBtc(e.clientX, e.clientY, `- $${autoPrice.toFixed(2)}`);
         window.updateBtcEquivalent();
 
+        if (autoLevel == 0) {
+            unlockAchievement('stonks');
+        }
+
+        playSound('./audio/shop.mp3')
         autoLevel++;
-        autoPrice *= 4.25; // precios x4.25
+        if (autoLevel <= 2) {
+            autoPrice *= 4.25;  // niveles 1-2
+        } else if (autoLevel <= 4) {
+            autoPrice *= 8.5;   // niveles 3-4
+        } else if (autoLevel <= 6) {
+            autoPrice *= 12.75; // niveles 5-6
+        } else if (autoLevel <= 8) {
+            autoPrice *= 17;    // niveles 7-8
+        } else { // niveles 9-10
+            autoPrice *= 22.5;  // niveles 9-10
+        }
+
         startAutoBtcGeneration();
         saveUpgradeLevel();
         updateUpgradeDisplay();
@@ -108,24 +125,10 @@ function updateUpgradeDisplay() {
     const HTMLautoPrice = document.getElementById('auto-price');
 
     HTMLclickLevel.textContent = clickLevel;
-HTMLclickPrice.textContent = clickPrice >= 1_000_000_000_000_000_000_000_000_000
-    ? `${(clickPrice / 1_000_000_000_000_000_000_000_000_000).toFixed(2)}Sp`
-    : clickPrice >= 1_000_000_000_000_000_000_000_000
-        ? `${(clickPrice / 1_000_000_000_000_000_000_000_000).toFixed(2)}Sx`
-        : clickPrice >= 1_000_000_000_000_000_000_000
-            ? `${(clickPrice / 1_000_000_000_000_000_000_000).toFixed(2)}Qi`
-            : clickPrice >= 1_000_000_000_000_000_000
-                ? `${(clickPrice / 1_000_000_000_000_000_000).toFixed(2)}Qa`
-                : clickPrice >= 1_000_000_000_000
-                    ? `${(clickPrice / 1_000_000_000_000).toFixed(2)}T`
-                    : clickPrice >= 1_000_000_000
-                        ? `${(clickPrice / 1_000_000_000).toFixed(2)}B`
-                        : clickPrice >= 1_000_000
-                            ? `${(clickPrice / 1_000_000).toFixed(2)}M`
-                            : clickPrice.toFixed(2);
+    HTMLclickPrice.textContent = normalizer(clickPrice, 2);
 
     HTMLautoLevel.textContent = autoLevel;
-    HTMLautoPrice.textContent = autoLevel >= 10 ? "Maxed" : autoPrice >= 1_000_000 ? (autoPrice / 1_000_000).toFixed(2) + 'M' : autoPrice.toFixed(2);
+    HTMLautoPrice.textContent = autoLevel >= 10 ? "Maxed" : normalizer(autoPrice, 2);
     HTMLautoPrice.previousElementSibling.style.display = autoLevel >= 10 ? "none" : "inline"; // Eliminar el símbolo $ si está maxeado
     if (autoLevel >= 10) {
         document.getElementById('auto-upgrade').disabled = true;

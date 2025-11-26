@@ -5,30 +5,96 @@
   --header-height: 80px;
 }
 
+/* --- Chrome, Safari y Edge (WebKit) --- */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* --- Firefox --- */
+* {
+  scrollbar-width: none;      /* Oculta la barra */
+  scrollbar-color: transparent transparent; /* Por si acaso */
+}
+
+/* --- Internet Explorer 10+ y Microsoft Edge antiguo --- */
+* {
+  -ms-overflow-style: none;
+}
+
 html, body {
     margin: 0;
     padding: 0;
     width: 100vw;      /* ancho completo del viewport */
     height: 100vh;     /* altura completa del viewport */
-    overflow: hidden;  /* evita scroll */
+    overflow-x: hidden;  /* evita scroll */
     background: black;
     position: relative; /* referencia para elementos absolute dentro */
 }
 
-#scoreboard {
-    z-index: 50;
+#t:checked + div {
+    display:block
+}
+
+#menu{
+    margin: 15px;
+    display:none
+}
+
+#menu-label{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:100;
+    cursor:pointer;font-size:28px
+}
+
+#menu-label:hover{
+    transform: scale(1.2);
+    color:#ffffff
+}
+
+.falling-div {
+    width: 80px;           /* ancho del div */
+    height: 80px;          /* alto del div */
+    position: absolute;     /* para poder moverlo por la pantalla */
+    background-size: contain;  /* ajustar imagen dentro del div */
+    background-repeat: no-repeat;
+    cursor: pointer;        /* cambia el cursor al pasar por encima */
+    border-radius: 10px;    /* esquinas redondeadas */
+    transition: transform 0.2s; /* efecto al click o hover */
+}
+
+.falling-img {
     position: absolute;
-    text-align: center;
-    width: 100%;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.6); /* ligeramente más oscuro */
+    left: 50%;           /* posición horizontal inicial */
+    transform: translateX(-50%);
+    width: 80px;          /* ajusta tamaño */
+    height: auto;
+    cursor: pointer;
+    transition: top 3s linear; /* duracion del movimiento */
+    z-index: 1000000;          /* sobre otros elementos */
+    padding: 10px; /* aumenta la zona clickeable sin cambiar la imagen */
+}
+
+#scoreboard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;   /* evita que se salga de la pantalla */
+    overflow-y: auto;    /* permite scroll DENTRO del scoreboard */
+    z-index: 50;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #ff7300ff;
-    padding: 20px 0; /* padding arriba y abajo */
-    border-top: 2px solid #ff7300ff;
+    padding: 20px 0;
     border-bottom: 2px solid #ff7300ff;
     font-family: 'Doto', Courier, monospace;
-    text-shadow: 1px 1px 0 #000000, 2px 2px 0 #222; /* efecto retro / arcade */
+    text-shadow: 1px 1px 0 #000000, 2px 2px 0 #222;
 }
+
 #scoreboard p {
     color: white;
     margin: 0; /* elimina el espacio entre h1 y p */
@@ -39,13 +105,14 @@ html, body {
 }
 
 #bitcoin-container {
-    position: absolute;
-    bottom: 40px;
+    position: fixed;
+    margin-bottom: 50px;
+    bottom: 0; /* siempre al fondo de la ventana */
     left: 50%;
     transform: translateX(-50%);
-    z-index: 50;
+    z-index: 40;
     font-size: 16px;
-    color: #ff9a00; /* texto por defecto */
+    color: #ff9a00;
     background-color: #000000;
     border: 2px solid #ff7300ff;
     border-radius: 10px;
@@ -92,6 +159,10 @@ html, body {
     color: #ffffff; /* blanco puro */
 }
 
+#click-score {
+    font-size: 12px;
+}
+
 .btc-float {
     z-index: 10;
     position: absolute;
@@ -116,6 +187,8 @@ html, body {
 }
 
 #upgrades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 2fr));
     margin: 0 auto;
     padding: 10px;
     display: flex;
@@ -125,7 +198,9 @@ html, body {
     max-width: 900px;        /* opcional: limitar ancho */
 }
 
-.upgrade-button {
+.def-button {
+    margin: 2px;
+    width: 60%;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -151,7 +226,7 @@ html, body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.upgrade-button:disabled {
+.def-button:disabled {
     background-color: #222222;   /* más apagado que el negro normal */
     border-color: #555555;       /* bordes grises */
     color: #777777;              /* texto gris apagado */
@@ -162,24 +237,160 @@ html, body {
 }
 
 /* Hover */
-.upgrade-button:hover {
+.def-button:hover {
     transform: translateY(-2px) scale(1.03);
     box-shadow: 0 6px 18px rgba(0,0,0,0.55);
     border-color: #ffa640;
 }
 
 /* Click */
-.upgrade-button:active {
+.def-button:active {
     transform: translateY(1px) scale(0.97);
     box-shadow: 0 3px 8px rgba(0,0,0,0.3);
 }
 
 /* Etiqueta del contador dentro del botón */
-.upgrade-button p {
+.def-button p {
     padding: 2px 10px;      /* más aire interno */
     background: rgba(255, 154, 0, 0.15);
     border: 1px solid #ff7300;
     border-radius: 6px;
     font-size: 14px;
     color: #ffb347;
+}
+
+#achievements {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+    gap: 12px;                              /* espacio entre tarjetas */
+    width: 60%;                             
+    margin: 0 auto;                         
+}
+
+/* --- ESTILOS PARA EL CONTENEDOR PRINCIPAL DE LOGROS --- */
+#achievements {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 60%;
+    margin: 10px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+
+/* --- ESTILOS PARA CADA TARJETA DE LOGRO --- */
+.achievement {
+    display: flex;
+    margin: 5px;
+    align-items: center;
+    background: linear-gradient(145deg, #1a1a1a 0%, #0d0d0d 100%);
+    border: 2px solid #333;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.achievement img {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.achievement-text {
+    flex-grow: 1;
+}
+
+.achievement-text h4 {
+    margin: 0 0 5px 0;
+    color: #FFFFFF; 
+    font-size: 1.1em;
+    font-family: 'Doto', Courier, monospace;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); 
+}
+
+.achievement-text p {
+    margin: 0;
+    color: #999;
+    font-size: 0.9em;
+    font-family: 'Doto', Courier, monospace;
+}
+
+.achievement.not-achieved {
+    filter: grayscale(100%) brightness(50%);
+    opacity: 0.6;
+    border-color: #222;
+}
+
+.achievement.not-achieved img {
+    filter: grayscale(100%);
+    opacity: 0.7;
+}
+
+.achievement.not-achieved .achievement-text h4,
+.achievement.not-achieved .achievement-text p {
+    color: #555;
+    text-shadow: none;
+}
+
+.achievement.achieved {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+    border-color: #ff9a00; 
+    box-shadow: 0 0 10px rgba(255, 154, 0, 0.8), 
+                0 0 20px rgba(255, 154, 0, 0.4) inset;
+    background: linear-gradient(145deg, #251e0e 0%, #151007 100%); 
+}
+
+.achievement.achieved img {
+    filter: grayscale(0%);
+}
+
+.achievement.achieved .achievement-text h4 {
+    color: #ff9a00; 
+    text-shadow: 0 0 8px rgba(255, 154, 0, 0.8); 
+}
+
+.achievement.achieved .achievement-text p {
+    color: #FFFFFF; 
+}
+
+.achievement:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 154, 0, 0.2); 
+}
+
+.achievement.not-achieved:hover {
+    opacity: 0.8;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* --- ESTILOS ESPECÍFICOS PARA LA NOTIFICACIÓN POP-UP --- */
+.achievement.notification-popup {
+    /* Fija la posición en la pantalla (siempre visible) */
+    position: fixed;
+    bottom: 30px; 
+    right: -400px; /* Inicia fuera de la pantalla (a la derecha) */
+    z-index: 1000; /* Asegura que esté por encima de todo */
+    width: 350px; /* Ancho fijo para el pop-up */
+    
+    /* La transición es esencial para el efecto de deslizamiento */
+    transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    
+    /* Aseguramos que el texto y la imagen se vean bien en el pop-up */
+    padding: 15px; 
+    /* Elimina cualquier margen/padding que pueda tener el logro original por el grid */
+    margin: 0; 
+    
+    /* Estilo de logro conseguido (por si la clonación falla) */
+    border-color: #ff9a00; 
+    box-shadow: 0 0 10px rgba(255, 154, 0, 0.8);
+}
+
+/* --- CLASE DE ANIMACIÓN ACTIVA (MOSTRAR) --- */
+.achievement.notification-popup.notification-show {
+    right: 30px; /* Desliza hacia adentro */
 }

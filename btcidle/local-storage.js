@@ -1,6 +1,7 @@
 // ---------------------------
 // Guardar datos globales del jugador
 // ---------------------------
+
 function savePlayerData() {
     if (!window.currentBtcPrice) return;
 
@@ -11,7 +12,8 @@ function savePlayerData() {
         clickLevel,
         clickPrice,
         autoLevel,
-        autoPrice
+        autoPrice,
+        totalClicks
     };
     localStorage.setItem('btcClickerPlayer', JSON.stringify(data));
 }
@@ -41,10 +43,24 @@ function loadPlayerData() {
     if (data.clickPrice !== undefined) clickPrice = data.clickPrice;
     if (data.autoLevel !== undefined) autoLevel = data.autoLevel;
     if (data.autoPrice !== undefined) autoPrice = data.autoPrice;
+    if (data.totalClicks !== undefined) totalClicks = data.totalClicks;
+   document.getElementById('click-score').querySelector('#value').textContent = totalClicks;
 
     if (window.updateBtcEquivalent) window.updateBtcEquivalent();
     if (window.updateUpgradeDisplay) window.updateUpgradeDisplay();
 }
+
+function loadAchievements() {
+    const saved = localStorage.getItem('btcClickerAchievements');
+    if (!saved) return;
+
+    const savedAchievements = JSON.parse(saved);
+    for (const id in savedAchievements) {
+        achievements[id] = savedAchievements[id];
+        updateAchievementDisplay(id);
+    }
+}
+
 
 // ---------------------------
 // Autosave
@@ -56,3 +72,4 @@ window.addEventListener('beforeunload', savePlayerData);
 // Inicialización
 // ---------------------------
 loadPlayerData();
+loadAchievements();
