@@ -2,14 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Penaltis</title>
+  <title>⚽ Penaltis Pro</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<div id="rondaContador">Ronda 1</div>
 <h1>⚽ Penaltis</h1>
-<h2 id="turnoTexto"></h2>
+<h2 id="turnoTexto">Cargando...</h2>
 
 <div id="marcador"></div>
 
@@ -27,15 +28,14 @@
   <button onclick="elegir('derecha')">➡ Derecha</button>
 </div>
 
-<!-- OVERLAY -->
 <div id="overlay">
   <div class="box">
     <div class="emoji" id="overlayEmoji"></div>
     <p id="overlayText"></p>
 
     <div id="nameInputs">
-      <input id="name1" placeholder="Jugador 1">
-      <input id="name2" placeholder="Jugador 2">
+      <input id="name1" placeholder="Nombre Jugador 1">
+      <input id="name2" placeholder="Nombre Jugador 2">
     </div>
 
     <button id="overlayBtn">Continuar</button>
