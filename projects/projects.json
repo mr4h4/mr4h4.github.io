@@ -34,5 +34,11 @@
         "Body": "A simple tool that allows you to download YouTube videos and songs automatically and without ads. It offers a Python version that requires ffmpeg installed, and an .exe version that needs no additional installation.",
         "Img": "ytmp3.png",
         "Link": "https://github.com/mr4h4/yt-mp3-downloader"
+    },
+    "Proyect7": {
+        "Tittle": "penaltis",
+        "Body": "A simple cooperative soccer penalty shootout game, just for playing with friends and have fun.",
+        "Img": "penaltis.png",
+        "Link": "https://mr4h4.github.io/penaltis/index.html"
     }
 }

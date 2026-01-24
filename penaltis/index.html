@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Penaltis</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>⚽ Penaltis</h1>
+<h2 id="turnoTexto"></h2>
+
+<div id="marcador"></div>
+
+<div id="campo">
+  <div id="porteria">
+    <div id="portero"></div>
+  </div>
+  <div id="balon"></div>
+  <div id="floatingText"></div>
+</div>
+
+<div id="botones">
+  <button onclick="elegir('izquierda')">⬅ Izquierda</button>
+  <button onclick="elegir('centro')">⬆ Centro</button>
+  <button onclick="elegir('derecha')">➡ Derecha</button>
+</div>
+
+<!-- OVERLAY -->
+<div id="overlay">
+  <div class="box">
+    <div class="emoji" id="overlayEmoji"></div>
+    <p id="overlayText"></p>
+
+    <div id="nameInputs">
+      <input id="name1" placeholder="Jugador 1">
+      <input id="name2" placeholder="Jugador 2">
+    </div>
+
+    <button id="overlayBtn">Continuar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
