@@ -1,0 +1,82 @@
+/* =========================
+   VOTING LIST
+   ========================= */
+#voting-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =========================
+   VOTING BUTTONS
+   ========================= */
+#voting-list button {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #2a2a3c, #16161d);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#voting-list button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #32324b, #1c1c29);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+#voting-list button:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   PLAYER NAME & VOTE COUNT
+   ========================= */
+#voting-list button span {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   PRIMARY VOTE BUTTON
+   ========================= */
+.vote-primary {
+  background: linear-gradient(135deg, #ff3b3b, #ff6565);
+  color: #fff;
+  box-shadow: 0 8px 20px -8px rgba(255,59,59,0.6);
+}
+
+.vote-primary:hover {
+  box-shadow: 0 12px 28px -10px rgba(255,59,59,0.7);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes buttonGlow {
+  0%, 100% { box-shadow: 0 6px 12px rgba(255,59,59,0.4); }
+  50% { box-shadow: 0 8px 20px rgba(255,59,59,0.6); }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (max-width: 400px) {
+  #voting-list button {
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+}

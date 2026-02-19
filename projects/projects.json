@@ -40,5 +40,11 @@
         "Body": "A simple cooperative soccer penalty shootout game, just for playing with friends and have fun.",
         "Img": "penaltis.png",
         "Link": "https://mr4h4.github.io/penaltis/index.html"
+    },
+    "Proyect8": {
+        "Tittle": "impostor",
+        "Body": "A simple game inspired by Among Us, where you play as the impostor and try to eliminate the crew members without getting caught. Built with HTML, CSS, and JavaScript, it offers a fun and engaging experience for fans of the popular game.",
+        "Img": "impostor.png",
+        "Link": "https://mr4h4.github.io/impostor/index.html"
     }
 }

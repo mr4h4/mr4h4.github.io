@@ -1,0 +1,238 @@
+/* =========================
+   RESET & VARIABLES
+   ========================= */
+:root {
+  --bg-main: #0b0b0f;
+  --bg-panel: #16161d;
+  --bg-item: #1f1f2b;
+  --accent: #ff3b3b;
+  --accent-glow: rgba(255, 59, 59, 0.4);
+  --text-main: #ffffff;
+  --text-muted: #b5b5c0;
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* =========================
+   BODY - CENTRADO TOTAL
+   ========================= */
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top, #141420, var(--bg-main));
+  color: var(--text-main);
+  text-align: center;
+  
+  /* Centrado vertical y horizontal */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* =========================
+   SCREEN LAYOUT
+   ========================= */
+.screen {
+  display: none;
+  width: 100%;
+  max-width: 420px;
+  background: transparent;
+  animation: fadeIn 0.4s ease-out;
+  
+  /* Flexbox interno para controlar espacios entre elementos */
+  flex-direction: column;
+  gap: 24px; 
+}
+
+.screen.active {
+  display: flex; /* Cambiado a flex para activar el centrado interno */
+}
+
+/* =========================
+   TITLES & TEXT
+   ========================= */
+h1, h2, h3 {
+  margin: 0; /* Controlamos el margen mediante el 'gap' del padre */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  color: var(--text-main);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+p {
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* =========================
+   INPUTS & BUTTONS
+   ========================= */
+input, button {
+  padding: 14px 16px;
+  font-size: 16px;
+  border-radius: var(--radius);
+  border: none;
+  outline: none;
+}
+
+input {
+  background: var(--bg-item);
+  color: var(--text-main);
+  width: 100%;
+  transition: var(--transition);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+button {
+  margin: 10px;
+  background: var(--bg-item);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: var(--transition);
+  font-weight: 600;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff3b3b, #ff6565);
+  box-shadow: 0 8px 24px -8px var(--accent);
+  color: white;
+  width: 100%;
+  margin-top: 8px; /* Espacio extra para separarlo del grupo anterior */
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px var(--accent);
+}
+
+.primary:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   PLAYER LIST
+   ========================= */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+li {
+  background: linear-gradient(145deg, #1b1b27, #222232);
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+li input {
+  background: transparent;
+  border: none;
+  padding: 8px;
+}
+
+li input:focus {
+  box-shadow: none;
+}
+
+/* =========================
+   CONFIG BLOCKS
+   ========================= */
+.config {
+  background: var(--bg-panel);
+  padding: 20px;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.config-checkbox {
+  background: var(--bg-panel);
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.config-checkbox input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+
+.config-checkbox label {
+  cursor: pointer;
+  color: var(--text-main);
+  flex: 1;
+  text-align: left;
+}
+
+/* =========================
+   TIMER
+   ========================= */
+#timer {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 20px 0;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent-glow);
+  font-variant-numeric: tabular-nums; /* Evita que el texto "salte" al cambiar números */
+}
+
+/* =========================
+   ANIMATIONS
+   ========================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media (min-width: 600px) {
+  .screen {
+    padding: 40px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+  }
+}
