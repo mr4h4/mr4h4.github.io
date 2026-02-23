@@ -1,0 +1,25 @@
+/* Reset básico para evitar márgenes */
+:root {
+  --primary-color: #0d1117;
+  --secondary-color: #ab0445;
+
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --blur: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p, a, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+body {
+  background: #0d1117;
+}
+
