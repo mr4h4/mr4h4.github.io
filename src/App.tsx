@@ -42,7 +42,7 @@ export default function App() {
           style={{ display: "inline-block" }}
         >
           <img
-            src="./src/assets/github-logo.webp"
+            src="/assets/github-logo.webp"
             alt="GitHub Logo"
             width="33"
             height="33"

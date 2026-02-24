@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link } from "react-router-dom";
 import { Matrix } from "../Matrix/Matrix.tsx";
-import Avatar from '../../assets/avatar.png';
-import AvatarTongue from '../../assets/avatarTongue.png';
+import Avatar from '/assets/avatar.png';
+import AvatarTongue from '/assets/avatarTongue.png';
 import './Header.css';
 import IDEAS from "./ideas.json";
 
