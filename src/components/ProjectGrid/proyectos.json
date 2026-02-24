@@ -16,5 +16,11 @@
     "descripcion": "The viral Impostor game adapted into a web version with no ads and smooth gameplay.",
     "url": "https://mr4h4.github.io/impostor/",
     "temas": ["web", "game", "social-deduction", "interactive", "fun"]
+  },
+  {
+    "nombre": "Mini Universe",
+    "descripcion": "A simple universe simulation with basic physics and interactive elements.",
+    "url": "https://mr4h4.github.io/mini-universe/",
+    "temas": ["web", "simulation", "physics", "interactive", "space"]
   }
 ]
