@@ -24,7 +24,23 @@ export function Matrix({ color }: MatrixProps) {
     if (!header) return;
 
     const fontSize = 14;
-    const characters = "0110カ0110キ0110ケ0110サ0110ス0110セ0110";
+    const characters = [
+  // La base: 0 y 1 abundantes
+  "0", "1", "0", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "1", "0", "1",
+  "0", "1", "1", "0", "0", "1", "0", "1", "1", "0", "0", "1", "0", "1", "0", "1",
+
+  // Caracteres japoneses “cool”
+  "カ", "キ", "ケ", "コ", "サ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト",
+
+  // Símbolos de error / hacker / glitch
+  "Δ", "Ξ", "λ", "ψ", "∞", "≠", "≈", "≡", "∑",
+
+  // Letras pseudo hacker (letras y números mezclados)
+  "A", "B", "C", "D", "E", "F", "X", "Y", "Z", "G", "H", "I", "J", "K", "L", "M",
+
+  // Extra: errores o glitches
+  "error", "???", "!!!", "###", "@@", "&&", "%%", "$$", "!!", "??"
+];
 
     let columns = 0;
     let drops: number[] = [];
