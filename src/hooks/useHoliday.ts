@@ -6,7 +6,7 @@ interface Holiday {
   description: string;
 }
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "http://81.17.96.135:777/api/today";
 
 export function useHoliday() {
   const [holiday, setHoliday] = useState<Holiday | null>(null);
