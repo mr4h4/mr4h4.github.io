@@ -8,7 +8,7 @@ export function ContentBlog({ currentColor }: { currentColor: string }) {
   return (
     <main className="content-home">
       <h1>Blog</h1>
-      <p>Welcome to my blog! Here I share my thoughts, projects, and updates about my journey as a developer.</p>
+      <p>Welcome to my blog! Here I share my thoughts, new projects, and updates about my journey as a developer.</p>
       <hr style={{ borderColor: currentColor }}></hr>
       <div className="today-div">
         <TodayAPI currentColor={currentColor} />  
