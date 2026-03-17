@@ -18,7 +18,7 @@ export function ContentRepos({ currentColor }: ContentReposProps) {
       <h1>My Repositories</h1>
 
       <p>
-        A showcase of my GitHub projects with links and key details.
+        A showcase of my best GitHub projects with links and key details.
       </p>
 
       <hr style={{ borderColor: currentColor }} />

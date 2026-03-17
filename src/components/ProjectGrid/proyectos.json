@@ -22,5 +22,11 @@
     "descripcion": "A simple universe simulation with basic physics and interactive elements.",
     "url": "https://mr4h4.github.io/mini-universe/",
     "temas": ["web", "simulation", "physics", "interactive", "space"]
+  },
+  {
+    "nombre": "today.api",
+    "descripcion": "An automated REST API that generates and caches daily historical events using Google Gemini to optimize performance and API usage.",
+    "url": "https://github.com/mr4h4/today-api",
+    "temas": ["nodejs", "express", "google-gemini", "ia", "rest-api", "automation"]
   }
 ]
