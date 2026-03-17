@@ -1,8 +1,6 @@
-main {
-  max-width: 90%;
-  margin: 0 auto;
-  padding: 20px;
-}
+
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 main.content-home {
   padding: 2rem;
@@ -63,10 +61,8 @@ hr {
   background: rgba(255, 255, 255, 0.08);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 .contact-list span {
-   font-family: 'Doto', monospace;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 
@@ -130,5 +126,60 @@ hr {
   .contact-list a {
     font-size: 0.9rem;
     word-break: break-word;      
+  }
+}
+
+.today-div {
+  display: flex;            
+  justify-content: center;   
+  align-items: center;      
+  flex-direction: column;    
+  min-height: 200px;         
+}
+
+.holiday-card {
+  background-color: rgba(255, 255, 255, 0.05); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  max-width: 800px;
+  color: #f5f5f5; 
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.holiday-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+}
+
+.holiday-card small {
+  display: block;
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.holiday-card h2 {
+  font-size: 1.4rem;
+  margin: 0.2rem 0 0.5rem;
+  color: currentColor; 
+}
+
+.holiday-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #e0e0e0;
+}
+
+/* Responsivo */
+@media (max-width: 500px) {
+  .holiday-card {
+    padding: 1rem;
+    max-width: 90%;
   }
 }
