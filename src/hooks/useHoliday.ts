@@ -6,7 +6,8 @@ interface Holiday {
   description: string;
 }
 
-const API_URL = import.meta.env.VITE_API_URL;
+//const API_URL = import.meta.env.VITE_API_URL;
+const API_PROXY = "/api/holiday";
 
 export function useHoliday() {
   const [holiday, setHoliday] = useState<Holiday | null>(null);
@@ -14,7 +15,7 @@ export function useHoliday() {
   useEffect(() => {
     async function loadHoliday() {
       try {
-        const res = await fetch(API_URL);
+        const res = await fetch(API_PROXY);
         if (!res.ok) {
           console.error("Holiday not found", res.status);
           setHoliday(null);
