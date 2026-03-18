@@ -54,11 +54,12 @@ export function ContentHome({ currentColor }: { currentColor: string }) {
 
       <div className="cta-item">
         <div className="cta-info">
-        <h2 className="subtitle" style={{color: currentColor, textDecoration: 'underline',textDecorationThickness: '2px' /* Controla el grosor de la línea */}}>
+        <p style={{color: currentColor, fontWeight: "bolder"}}>
           Check out my work or let's connect:
-        </h2>
-          <p>
-            A transparent look at my stack evolution and professional standards. Let’s collaborate on new technologies.
+        </p>
+          <p style={{ fontSize: '1rem', lineHeight: '1.5' }}>
+            A transparent look at my stack evolution and professional standards.<br></br>
+            Let’s collaborate on new technologies.
           </p>
         </div>
         <div className="cta-actions">

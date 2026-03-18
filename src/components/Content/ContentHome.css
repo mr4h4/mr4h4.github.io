@@ -28,7 +28,7 @@ main.content-home h1::after {
 }
 
 main.content-home p {
-  margin-top: 1rem;
+  margin-top: 0.3rem;
   font-size: 1.2rem;
   line-height: 1.6;
 }
