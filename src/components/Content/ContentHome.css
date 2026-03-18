@@ -152,6 +152,7 @@ hr {
 }
 
 small {
+  font-family: 'Segoe UI', sans-serif;
   padding-top: 2px;
   display: block;
   font-size: 0.8rem;
