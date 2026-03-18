@@ -33,18 +33,89 @@ main.content-home p {
   line-height: 1.6;
 }
 
+.content-article {
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
 
 
 hr {
   margin: 20px
 }
 
+.hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 1rem auto;
+    padding: 0 1rem;
+}
+
+.cta-item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;   
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 0.5rem;     
+    gap: 1rem;
+    border-radius: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-item:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--secondary-color);
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 30px rgba(var(--secondary-rgb), 0.2);
+}
+
+.cta-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center; 
+}
+
+.cta-info p {
+    margin: 0;
+    font-size: 1rem;
+    color: #e0e0e0;
+    line-height: 1.5;
+    text-transform: none;
+    font-weight: 300;
+    max-width: 600px;       
+}
+
+.cta-actions {
+    display: flex;
+    flex-direction: row;   
+    justify-content: center; 
+    gap: 0.5rem;            
+    width: 100%;
+}
+
+.cta-buttons {
+    display: flex;
+    align-items: center; 
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.cta-buttons p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #666;
+    max-width: 400px;
+    line-height: 1.2; 
+    display: flex;
+    align-items: center;
+}
+
 .contact-button {
   display: inline-block;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  margin-right: 5px;
-  margin-left: 5px;
   border: 2px solid var(--secondary-color);
   background-color: var(--primary-color);
   color: #ffffff;
@@ -79,6 +150,7 @@ hr {
   transform: translateY(-1px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
+
 small {
   padding-top: 2px;
   display: block;
@@ -180,7 +252,44 @@ small {
   .contact-list li {
     padding: 0.9rem 1.2rem;
   }
+  
+  .hero-cta {
+        margin: 0.5rem auto; /* Reducimos el margen externo */
+        gap: 1rem;
+    }
+
+    .cta-item {
+        padding: 1.5rem 1rem; /* Aumentamos un poco el padding interno para que respire */
+        gap: 0.8rem;          /* Espacio más ajustado entre elementos */
+    }
+
+    .cta-info p {
+        font-size: 0.9rem;    /* Texto un pelín más pequeño para móviles */
+        line-height: 1.4;
+        padding: 0 5px;       /* Evita que el texto toque los bordes */
+    }
+
+    .cta-actions {
+        flex-direction: column; /* ¡CLAVE! Los botones se ponen uno debajo del otro */
+        align-items: center;
+        gap: 0.8rem;            /* Espacio entre botones en vertical */
+    }
+
+    .contact-button {
+        width: 100%;            /* Los botones ocupan todo el ancho disponible */
+        max-width: 280px;       /* Pero no dejan de ser cómodos para el pulgar */
+        padding: 10px 20px;     /* Botones ligeramente más compactos */
+        font-size: 0.85rem;
+    }
+    
+    /* Ajuste para el subtítulo inline si es muy largo */
+    .subtitle {
+        font-size: 1.2rem !important; 
+        text-align: center;
+    }
 }
+
+
 
 /* Móviles */
 @media (max-width: 480px) {
