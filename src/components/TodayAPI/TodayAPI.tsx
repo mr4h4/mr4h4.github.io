@@ -14,7 +14,8 @@ export default function HolidayCard({ currentColor }: HolidayCardProps) {
     return (
         <article className="holiday-card">
         <small>{today}</small>
-        <p>Nothing special today...</p>
+        <h2 style={{ color: currentColor, textShadow: 'none', filter: 'none'}}>Nothing special today...</h2>
+        <p>No recognized historical events today. It’s your chance to make history.</p>
         </article>
     );
     }
@@ -22,7 +23,7 @@ export default function HolidayCard({ currentColor }: HolidayCardProps) {
   return (
     <div className="holiday-card">
       <small>{holiday.date}</small>
-      <h2 style={{ color: currentColor }}>{holiday.title}</h2>
+      <h2 style={{ color: currentColor, textShadow: 'none', filter: 'none'}}>{holiday.title}</h2>
       <p>{holiday.description}</p>
     </div>
   );

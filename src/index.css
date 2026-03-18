@@ -8,6 +8,12 @@
   --blur: 12px;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,79 +1,67 @@
+/* CONTENEDOR PRINCIPAL */
 #stats-container {
-    margin: 10px;
+    margin: 20px auto;
     display: flex;
-    flex-direction: row; /* Horizontal por defecto (Desktop) */
-    align-items: stretch;
-    gap: 15px;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-/* ESTILO PARA LAS DOS "TARJETAS" */
-#stats-container > img, 
-#stats-container > div {
-    width: 50%; /* Mitad del ancho en desktop */
-    min-height: 200px; 
-    border-radius: 10px;
-    border: 2px solid var(--secondary-color); 
+    align-items: stretch; /* hace que los hijos tengan la misma altura */
+    gap: 20px;
+    max-width: 1400px;
     box-sizing: border-box;
-    background: rgba(13, 17, 23, 0.5);
 }
 
-/* Ajuste para la imagen de Stats */
+/* TARJETAS DE STATS */
 #stats-container > img {
+    flex: 1 1 45%; /* cada imagen ocupa aprox la mitad del contenedor en escritorio */
+    width: 100%;
+    height: auto;
     object-fit: contain;
-    padding: 10px; /* Un poco de aire para la imagen de la API */
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: transform 1s ease-in-out, border-color 1s ease-in-out, box-shadow 1s ease-in-out;
 }
 
-/* Contenedor de Badges */
-#stats-container > div {
-    padding: 15px;
-    /* Sobrescribimos el grid inline del componente si fuera necesario, 
-       pero el flex aquí ayuda al centrado */
-    display: grid !important; 
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); 
-    gap: 8px;
-    place-items: center;
-    overflow: hidden;
+/* Usamos un truco para que las imágenes tengan la misma altura */
+#stats-container > img.github-stats-wrapper {
+    aspect-ratio: 2 / 1; /* ajustar según proporción de la imagen real */
 }
 
-/* Estilo para los badges individuales */
-#stats-container > div img {
-    width: 100% !important; 
-    max-width: 110px; /* Evita que crezcan demasiado */
-    height: auto !important; 
-    border: none;
-    border-radius: 4px;
-    transition: transform 0.25s ease;
+#stats-container > img[src*="top-langs"] {
+    aspect-ratio: 2 / 1; /* misma proporción que la otra */
 }
 
-.badge:hover {
-    transform: scale(1.05);
+/* Hover efecto */
+#stats-container > img:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.34);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- RESPONSIVE DESIGN --- */
+/* ==========================================================
+   MEDIA QUERIES PARA RESPONSIVE
+========================================================== */
 
-@media (max-width: 768px) {
+/* Tablets / pantallas medianas */
+@media (max-width: 992px) {
     #stats-container {
-        flex-direction: column; /* Apilar uno encima de otro */
+        flex-direction: column;
         align-items: center;
     }
 
-    #stats-container > img, 
-    #stats-container > div {
-        width: 100%; /* Ocupar todo el ancho en móvil */
-        max-width: 500px; /* Para que no se vea gigante en tablets */
-        height: auto; 
-        min-height: 150px;
-    }
+    #stats-container > img {
+        flex: 1 1 90%;
+        min-width: 300px;
+        aspect-ratio: auto; /* dejamos que ajuste según contenido */
 
-    #stats-container > div {
-        /* Ajustamos las columnas del grid para pantallas pequeñas */
-        grid-template-columns: repeat(3, 1fr); 
     }
 }
 
-@media (max-width: 480px) {
-    #stats-container > div {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en móviles muy pequeños */
+/* Móviles / pantallas pequeñas */
+@media (max-width: 576px) {
+    #stats-container > img {
+        flex: 1 1 95%;
+        min-width: 280px;
+        aspect-ratio: auto;
+
     }
 }

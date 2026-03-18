@@ -25,8 +25,8 @@
   border-bottom: 2px solid var(--secondary-color);
 }
 
-header p, a, h1 {
-  text-shadow: 4px 4px 6px var(--secondary-color);
+header p, a, h1, h2, h3 {
+  text-shadow: 4px 4px 6px color-mix(in srgb, var(--secondary-color), transparent 40%);
 }
 
 

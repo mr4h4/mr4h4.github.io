@@ -19,6 +19,7 @@ export default function App() {
 
   return (
     <>
+    <div className="app-container">
       <Header currentColor={currentColor} />
       
       <ColorMenu currentColor={currentColor} onColorSelect={handleColorChange} />
@@ -34,6 +35,7 @@ export default function App() {
       </Routes>
 
       <Footer currentColor={currentColor} />
+    </div>
     </>
   );
 }

@@ -73,7 +73,8 @@ export const Header = ({ currentColor }: { currentColor: string }) => {
         />
 
         {/* Pasamos el estado y su función de actualización al menú */}
-        <h1>mr4h4</h1>
+        <h1>Adrián</h1>
+        <h3>(mr4h4)</h3>
         
         {/* Mostramos la idea animada */}
         <p className='randomIdea'>
@@ -83,7 +84,7 @@ export const Header = ({ currentColor }: { currentColor: string }) => {
         <nav>
           <Link to="/">Home</Link>
           <Link to="/blog">Blog</Link>
-          <Link to="/repos">Repos</Link>
+          <Link to="/repos">Projects</Link>
           <Link to="/contact">Contact</Link>
         </nav>
       </div>

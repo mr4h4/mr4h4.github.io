@@ -2,6 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+main{
+  flex: 1;
+}
 main.content-home {
   padding: 2rem;
   color: white;
@@ -30,12 +33,80 @@ main.content-home p {
   line-height: 1.6;
 }
 
+
+
 hr {
   margin: 20px
 }
 
+.contact-button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 5px;
+  margin-left: 5px;
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: 50px;
+  padding: 12px 28px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact-button:hover {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #ffffff; 
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-button:active {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button:active {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+small {
+  padding-top: 2px;
+  display: block;
+  font-size: 0.8rem;
+  color: #aaaaaa;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.time-hora {
+  font-size: clamp(2rem, 10vw, 2rem);
+  font-weight: 450;
+  text-transform: uppercase;
+  display: block;
+  line-height: 1;
+}
+
+.subtitle {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  color: color-mix(in srgb, var(--secondary-color), white 70%);
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+  font-style: italic;
+}
 .contact-list {
-  max-width: 50%;
+  max-width: 25%;
   list-style: none;
   padding: 0;
   margin: 2rem auto; 
