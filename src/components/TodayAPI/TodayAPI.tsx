@@ -14,8 +14,8 @@ export default function HolidayCard({ currentColor }: HolidayCardProps) {
     return (
         <article className="holiday-card">
         <small>{today}</small>
-        <h2 style={{ color: currentColor, textShadow: 'none', filter: 'none'}}>Nothing special today...</h2>
-        <p>No recognized historical events today. It’s your chance to make history.</p>
+        <h2 style={{ color: currentColor, textShadow: 'none', filter: 'none'}}>Loading...</h2>
+        <p>Just a few seconds while we generate today’s ephemeris…</p>
         </article>
     );
     }
