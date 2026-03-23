@@ -1,6 +1,5 @@
-import "./ContentHome.css";
+import "./Content.css";
 import "../../index.css";
-import "./ContentHome.css";
 import TodayAPI from "../TodayAPI/TodayAPI";
 
 export function ContentBlog({ currentColor }: { currentColor: string }) {

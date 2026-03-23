@@ -1,4 +1,4 @@
-import "./ContentHome.css";
+import "./Content.css";
 import "../../index.css";
 
 export function ContentContact({ currentColor }: { currentColor: string }) {

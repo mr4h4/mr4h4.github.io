@@ -1,6 +1,6 @@
 import GithubStats from "../GitHubStats/GitHubStats.tsx";
 import { Link } from "react-router-dom";
-import "./ContentHome.css";
+import "./Content.css";
 import "../../index.css";
 
 const badges = [

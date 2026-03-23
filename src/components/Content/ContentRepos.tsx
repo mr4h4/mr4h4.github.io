@@ -1,4 +1,4 @@
-import "./ContentHome.css";
+import "./Content.css";
 import "../../index.css";
 
 import ProjectGrid, { type Project } from "../ProjectGrid/ProjectGrid";
@@ -15,10 +15,10 @@ export function ContentRepos({ currentColor }: ContentReposProps) {
 
   return (
     <main className="content-home">
-      <h1>My Repositories</h1>
+      <h1>My Projects</h1>
 
       <p>
-        A showcase of my best GitHub projects with links and key details.
+        A selection of projects I’ve built, with links, key details, and live demos for some of them.
       </p>
 
       <hr style={{ borderColor: currentColor }} />
