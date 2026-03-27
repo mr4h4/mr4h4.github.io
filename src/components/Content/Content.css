@@ -178,6 +178,7 @@ small {
   opacity: 0.9;
   font-style: italic;
 }
+
 .contact-list {
   max-width: 25%;
   list-style: none;
@@ -187,7 +188,6 @@ small {
   flex-direction: column;
   gap: 1rem;
 }
-
 
 .contact-list li {
   display: flex;
@@ -225,7 +225,7 @@ small {
   bottom: -3px;
   width: 0%;
   height: 2px;
-  background: currentColor;
+  background: var(--secondary-color);
   transition: width 0.3s ease;
 }
 
@@ -333,6 +333,7 @@ small {
 
 .holiday-card:hover {
   transform: translateY(-4px);
+  border-color: var(--secondary-color);
   box-shadow: 0 12px 24px rgba(0,0,0,0.6);
 }
 

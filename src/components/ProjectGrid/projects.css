@@ -12,7 +12,7 @@
 .project-card {
   background: #0d0d12; /* Negro mate profundo */
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-left: 3px solid currentColor;
+  border-left: 3px solid var(--secondary-color);
   border-radius: 2px; /* Esquinas casi rectas para look industrial */
   padding: 24px;
   display: flex;
@@ -28,9 +28,9 @@
 /* El brillo (Glow) con currentColor */
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: currentColor;
+  border-color: var(--secondary-color);
   /* Doble sombra: una sólida y otra difusa para efecto neón real */
-  box-shadow: 0 0 10px currentColor, 
+  box-shadow: 0 0 10px var(--secondary-color), 
               inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -45,14 +45,50 @@
 .project-card h2 a {
   text-decoration: none;
   color: inherit;
-  display: block;
+  display: inline-block;
+  position: relative;
+}
+
+.project-card h2 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: var(--secondary-color); 
+  transition: width 0.3s ease;
+}
+
+.project-card h2 a:hover::after {
+  width: 100%;
 }
 
 /* La flechita del título que reacciona al color */
 .project-card h2 a::before {
-  content: "» ";
-  color: currentColor;
-  opacity: 0.7;
+  content: "»";
+  letter-spacing: -2px;
+  margin-right: 10px;
+  color: var(--secondary-color);
+  opacity: 0.4;
+  display: inline-block;
+  transition: opacity 0.3s ease;
+}
+
+/* ACTIVADO DESDE EL CONTENEDOR PADRE */
+.project-card:hover h2 a::before {
+  animation: arrowPush 0.6s infinite alternate;
+  opacity: 1;
+}
+
+/* Animación */
+@keyframes arrowPush {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(6px);
+  }
 }
 
 /* Descripción */
@@ -88,11 +124,11 @@
 /* Hover del Tag: Uso de currentColor sin deformar el layout */
 .project-card:hover .project-tag {
   background: rgba(255, 255, 255, 0.05);
-  border-color: currentColor;
+  border-color: var(--secondary-color);
   color: #fff;
   /* Brillo en el texto en lugar de bold para que no se mueva */
-  text-shadow: 0 0 5px currentColor;
-  box-shadow: 0 0 5px currentColor;
+  text-shadow: 0 0 5px var(--secondary-color);
+  box-shadow: 0 0 5px var(--secondary-color);
 }
 
 /* Detalle visual de "esquina cortada" */
@@ -103,7 +139,7 @@
   right: 0;
   width: 10px;
   height: 10px;
-  background: linear-gradient(135deg, transparent 50%, currentColor 50%);
+  background: linear-gradient(135deg, transparent 50%, var(--secondary-color) 50%);
 }
 
 /* 📱 Móviles pequeños */

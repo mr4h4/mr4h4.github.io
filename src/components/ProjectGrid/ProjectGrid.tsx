@@ -26,7 +26,7 @@ function ProjectGrid({ proyectos }: ProjectGridProps) {
 
   return (
     <div className="project-grid">
-      {proyectos.map((proyecto) => (
+      {proyectos.map((proyecto) => ( 
         <div key={proyecto.url} className="project-card">
           <h2>
             <a
